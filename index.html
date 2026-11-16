@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Звіти з лабораторних робіт — WEB-орієнтовані технології</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&family=PT+Serif:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Шапка звіту -->
+    <header class="header">
+        <div class="header__text">
+            <h1>Звіти з лабораторних робіт<br>
+                з дисципліни «WEB-орієнтовані технології. Frontend розробки»</h1>
+            <p class="header__student">Виконавець: студент групи <b>ІА-44</b> Захаров Олег</p>
+        </div>
+        <img src="images/photo.jpg" alt="Фото студента" class="header__photo" width="120" height="150">
+    </header>
+
+    <!-- Навігація по лабораторних роботах -->
+    <nav class="labs">
+        <a href="index.html" class="labs__item labs__item--active">Лабораторна робота №1</a>
+        <a href="#" class="labs__item labs__item--disabled">Лабораторна робота №2</a>
+        <a href="#" class="labs__item labs__item--disabled">Лабораторна робота №3</a>
+        <a href="#" class="labs__item labs__item--disabled">Лабораторна робота №4</a>
+        <a href="#" class="labs__item labs__item--disabled">Лабораторна робота №5</a>
+        <a href="#" class="labs__item labs__item--disabled">Лабораторна робота №6</a>
+        <a href="#" class="labs__item labs__item--disabled">Лабораторна робота №7</a>
+        <a href="#" class="labs__item labs__item--disabled">Лабораторна робота №8</a>
+        <a href="#" class="labs__item labs__item--disabled">Лабораторна робота №9</a>
+    </nav>
+
+    <div class="layout">
+
+        <!-- Меню лабораторної роботи -->
+        <aside class="menu">
+            <a href="#topic" class="menu__item">Тема, мета, місце розташування сайту, звіту</a>
+            <a href="#subject" class="menu__item">Опис предметного середовища. Опис бізнес-логіки</a>
+            <a href="#structure" class="menu__item">Структура документа</a>
+            <a href="#table" class="menu__item menu__item--sub">HTML-код таблиці</a>
+            <a href="#image" class="menu__item menu__item--sub">HTML-код зображення</a>
+            <a href="#form" class="menu__item menu__item--sub">HTML-код форми</a>
+            <a href="#lists" class="menu__item menu__item--sub">HTML-код списків</a>
+            <a href="#main-page" class="menu__item">Головна сторінка WEB-застосунку</a>
+            <a href="#main-code" class="menu__item">Код головної сторінки WEB-застосунку</a>
+            <a href="#conclusions" class="menu__item">Висновки</a>
+        </aside>
+
+        <!-- Місце виведення інформації -->
+        <main class="content">
+
+            <!-- 1. Тема, мета -->
+            <section id="topic" class="block">
+                <h2>Лабораторна робота №1</h2>
+
+                <h3>Тема</h3>
+                <p>Теги та атрибути HTML-документа. Структурна розмітка. Git. GitHub. Робота з репозиторіями. Опис логіки власного WEB-застосунку.</p>
+
+                <h3>Мета</h3>
+                <p>Придбати практичні навички роботи з GitHub, репозиторіями, HTML-документом, таблицями, зображеннями, посиланнями, списками, формами. Створити шаблон звітного HTML-документа для відображення результатів роботи всіх лабораторних робіт.</p>
+
+                <h3>Місце розташування</h3>
+                <table class="links-table">
+                    <tr>
+                        <th rowspan="2">WEB-застосунок MODHUB</th>
+                        <td>Репозиторій</td>
+                        <td><a href="https://github.com/Oleg-StackOverflow/IA-44_appWEB-ZakharovOleh-FIOT-2026" target="_blank">github.com/Oleg-StackOverflow/IA-44_appWEB-ZakharovOleh-FIOT-2026</a></td>
+                    </tr>
+                    <tr>
+                        <td>Жива сторінка</td>
+                        <td><a href="https://Oleg-StackOverflow.github.io/IA-44_appWEB-ZakharovOleh-FIOT-2026/" target="_blank">Oleg-StackOverflow.github.io/IA-44_appWEB-ZakharovOleh-FIOT-2026</a></td>
+                    </tr>
+                    <tr>
+                        <th rowspan="2">Звітний HTML-документ</th>
+                        <td>Репозиторій</td>
+                        <td><a href="https://github.com/Oleg-StackOverflow/IA-44_appRECORD-ZakharovOleh-FIOT-2026" target="_blank">github.com/Oleg-StackOverflow/IA-44_appRECORD-ZakharovOleh-FIOT-2026</a></td>
+                    </tr>
+                    <tr>
+                        <td>Жива сторінка</td>
+                        <td><a href="https://Oleg-StackOverflow.github.io/IA-44_appRECORD-ZakharovOleh-FIOT-2026/" target="_blank">Oleg-StackOverflow.github.io/IA-44_appRECORD-ZakharovOleh-FIOT-2026</a></td>
+                    </tr>
+                </table>
+            </section>
+
+            <!-- 2. Предметне середовище -->
+            <section id="subject" class="block">
+                <h2>Опис предметного середовища</h2>
+                <p>Для лабораторних робіт обрано предметну галузь «Каталог модифікацій для комп'ютерних ігор». WEB-застосунок має назву MODHUB.</p>
+                <p>Моди — це доповнення, створені гравцями, які змінюють графіку, ігровий процес або наповнення гри. Моди для однієї гри часто розкидані по різних сайтах, і гравцеві складно зрозуміти, чи підійде мод до його версії гри та чи не конфліктуватиме з іншими модами. MODHUB збирає моди в одному каталозі, показує їхню оцінку, кількість завантажень, вимоги та інструкцію з встановлення.</p>
+                <p>Застосунком користуються три типи користувачів: гравець шукає та завантажує моди, автор публікує власні моди, модератор перевіряє нові моди перед появою в каталозі.</p>
+
+                <h3>Основні сутності</h3>
+                <ul>
+                    <li><b>Гра</b> — назва та пов'язані з нею модифікації.</li>
+                    <li><b>Мод</b> — назва, зображення, категорія, версія, вимоги та автор.</li>
+                    <li><b>Користувач</b> — гравець, автор або модератор.</li>
+                    <li><b>Оцінка й завантаження</b> — показники популярності мода.</li>
+                </ul>
+
+                <h2>Опис бізнес-логіки</h2>
+                <h3>Сценарій «Пошук і вибір мода»</h3>
+                <ol>
+                    <li>Гравець обирає гру або вводить пошуковий запит.</li>
+                    <li>Каталог відбирає моди за назвою та вибраною грою.</li>
+                    <li>Гравець переглядає оцінку, вимоги та інструкцію автора.</li>
+                    <li>Після перевірки сумісності гравець переходить до завантаження.</li>
+                </ol>
+
+                <h3>Сценарій «Публікація та перевірка»</h3>
+                <ol>
+                    <li>Автор заповнює назву, гру, категорію, опис, версію та вимоги мода.</li>
+                    <li>Новий мод надходить на перевірку модератору; до схвалення він не відображається в каталозі.</li>
+                    <li>Після схвалення мод публікується та прив'язується до гри.</li>
+                    <li>Рейтинг мода формується з оцінок користувачів.</li>
+                </ol>
+
+                <h3>Функціональні вимоги</h3>
+                <ul>
+                    <li>Пошук модів за назвою та фільтрація за грою.</li>
+                    <li>Перегляд списку популярних модів з оцінкою та кількістю завантажень.</li>
+                    <li>Додавання нового мода автором і перевірка його модератором.</li>
+                    <li>Вхід користувача в систему.</li>
+                    <li>Надсилання повідомлення через форму зворотного зв'язку.</li>
+                </ul>
+
+                <h3>Нефункціональні вимоги</h3>
+                <ul>
+                    <li>Коректне відображення в сучасних браузерах і на мобільних пристроях.</li>
+                    <li>Сторінки завантажуються не довше ніж за 2–3 секунди.</li>
+                    <li>Інтерфейс українською мовою, зрозуміла навігація.</li>
+                    <li>Перевірка даних у формах перед надсиланням.</li>
+                </ul>
+            </section>
+
+            <!-- 3. Структура документа -->
+            <section id="structure" class="block">
+                <h2>Структура головної сторінки WEB-застосунку</h2>
+                <p>Головна сторінка (файл <code>index.html</code>) складається з шапки, основної частини та футера. Основна частина містить пошук, таблицю популярних модів, інструкцію у вигляді списків і форму зворотного зв'язку. Стилі винесені в окремий файл <code>css/style.css</code>.</p>
+
+                <h3>Загальна структура</h3>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="uk"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;MODHUB — каталог модів&lt;/title&gt;
+    &lt;link rel="stylesheet" href="css/style.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;header class="header"&gt;          &lt;!-- логотип, посилання, кнопки --&gt;
+        &lt;a href="index.html" class="logo"&gt;...&lt;/a&gt;
+        &lt;nav class="header__nav"&gt;...&lt;/nav&gt;
+    &lt;/header&gt;
+
+    &lt;main class="container"&gt;
+        &lt;section class="catalog"&gt;    &lt;!-- h1, форма пошуку, список ігор --&gt;
+        &lt;section class="popular"&gt;    &lt;!-- h2, таблиця модів із зображеннями --&gt;
+        &lt;div class="bottom"&gt;
+            &lt;section class="howto"&gt;     &lt;!-- нумерований і маркований списки --&gt;
+            &lt;section class="feedback"&gt;  &lt;!-- форма зворотного зв'язку --&gt;
+        &lt;/div&gt;
+    &lt;/main&gt;
+
+    &lt;footer class="footer"&gt;...&lt;/footer&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+                <h3>Посилання</h3>
+                <p>Посилання на сторінку з описом предметної галузі та бізнес-логіки розміщене в шапці. На сторінці <code>about.html</code> є зворотне посилання на каталог.</p>
+<pre><code>&lt;nav class="header__nav"&gt;
+    &lt;a href="about.html" class="link-accent"&gt;Про проєкт і бізнес-логіку&lt;/a&gt;
+&lt;/nav&gt;
+&lt;!-- about.html --&gt;
+&lt;a href="index.html" class="link-accent"&gt;&amp;larr; До каталогу&lt;/a&gt;</code></pre>
+
+                <h3>Використані теги</h3>
+                <table class="theory-table">
+                    <thead>
+                        <tr><th>Група</th><th>Теги</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Структура документа</td><td><code>&lt;!DOCTYPE&gt;</code>, <code>&lt;html&gt;</code>, <code>&lt;head&gt;</code>, <code>&lt;meta&gt;</code>, <code>&lt;title&gt;</code>, <code>&lt;link&gt;</code>, <code>&lt;body&gt;</code></td></tr>
+                        <tr><td>Семантичні блоки</td><td><code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;footer&gt;</code>, <code>&lt;div&gt;</code></td></tr>
+                        <tr><td>Заголовки та текст</td><td><code>&lt;h1&gt;</code>, <code>&lt;h2&gt;</code>, <code>&lt;h3&gt;</code>, <code>&lt;p&gt;</code>, <code>&lt;span&gt;</code></td></tr>
+                        <tr><td>Посилання та зображення</td><td><code>&lt;a&gt;</code>, <code>&lt;img&gt;</code>, <code>&lt;svg&gt;</code></td></tr>
+                        <tr><td>Таблиця</td><td><code>&lt;table&gt;</code>, <code>&lt;thead&gt;</code>, <code>&lt;tbody&gt;</code>, <code>&lt;tr&gt;</code>, <code>&lt;th&gt;</code>, <code>&lt;td&gt;</code></td></tr>
+                        <tr><td>Списки</td><td><code>&lt;ol&gt;</code>, <code>&lt;ul&gt;</code>, <code>&lt;li&gt;</code></td></tr>
+                        <tr><td>Форми</td><td><code>&lt;form&gt;</code>, <code>&lt;label&gt;</code>, <code>&lt;input&gt;</code>, <code>&lt;textarea&gt;</code>, <code>&lt;button&gt;</code></td></tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- 3.1 Таблиця -->
+            <section id="table" class="block">
+                <h2>HTML-код таблиці</h2>
+                <p>На головній сторінці таблиця використовується для виведення популярних модів: у кожному рядку є зображення, гра й категорія, назва мода, оцінка та кількість завантажень.</p>
+<pre><code>&lt;table class="mods-table"&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th&gt;Мод&lt;/th&gt;
+            &lt;th class="col-num"&gt;Оцінка&lt;/th&gt;
+            &lt;th class="col-num"&gt;Завантаження&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;td&gt;
+                &lt;div class="mod"&gt;
+                    &lt;img src="images/zone-reborn.jpg" alt="Скриншот моду Zone Reborn" width="110" height="70"&gt;
+                    &lt;div&gt;
+                        &lt;p class="mod__meta"&gt;S.T.A.L.K.E.R. 2 / Графіка&lt;/p&gt;
+                        &lt;h3 class="mod__name"&gt;Zone Reborn&lt;/h3&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/td&gt;
+            &lt;td class="col-num"&gt;&lt;span class="star"&gt;&amp;#9734;&lt;/span&gt; 4.9&lt;/td&gt;
+            &lt;td class="col-num muted"&gt;&amp;#10515; 25,4 тис.&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;
+                &lt;div class="mod"&gt;
+                    &lt;img src="images/night-city.jpg" alt="Скриншот моду Night City Rewired" width="110" height="70"&gt;
+                    &lt;div&gt;
+                        &lt;p class="mod__meta"&gt;Cyberpunk 2077 / Геймплей&lt;/p&gt;
+                        &lt;h3 class="mod__name"&gt;Night City Rewired&lt;/h3&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/td&gt;
+            &lt;td class="col-num"&gt;&lt;span class="star"&gt;&amp;#9734;&lt;/span&gt; 4.8&lt;/td&gt;
+            &lt;td class="col-num muted"&gt;&amp;#10515; 42,1 тис.&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;
+                &lt;div class="mod"&gt;
+                    &lt;img src="images/nordic-horizons.jpg" alt="Скриншот моду Nordic Horizons" width="110" height="70"&gt;
+                    &lt;div&gt;
+                        &lt;p class="mod__meta"&gt;Skyrim SE / Графіка&lt;/p&gt;
+                        &lt;h3 class="mod__name"&gt;Nordic Horizons&lt;/h3&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/td&gt;
+            &lt;td class="col-num"&gt;&lt;span class="star"&gt;&amp;#9734;&lt;/span&gt; 4.9&lt;/td&gt;
+            &lt;td class="col-num muted"&gt;&amp;#10515; 85,6 тис.&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;
+                &lt;div class="mod"&gt;
+                    &lt;img src="images/vanilla-adventures.jpg" alt="Скриншот моду Vanilla+ Adventures" width="110" height="70"&gt;
+                    &lt;div&gt;
+                        &lt;p class="mod__meta"&gt;Minecraft / Нові світи&lt;/p&gt;
+                        &lt;h3 class="mod__name"&gt;Vanilla+ Adventures&lt;/h3&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/td&gt;
+            &lt;td class="col-num"&gt;&lt;span class="star"&gt;&amp;#9734;&lt;/span&gt; 4.7&lt;/td&gt;
+            &lt;td class="col-num muted"&gt;&amp;#10515; 31,2 тис.&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
+
+                <h3>Скриншот таблиці</h3>
+                <figure>
+                    <img src="images/table.png" alt="Скриншот таблиці популярних модів" class="screenshot">
+                    <figcaption>Рис. 1 — Таблиця «Популярні моди»</figcaption>
+                </figure>
+
+                <h3>Теорія: теги таблиць</h3>
+                <p>Таблиця в HTML створюється тегом <code>&lt;table&gt;</code>. Таблиця складається з рядків <code>&lt;tr&gt;</code>, а рядки — з комірок <code>&lt;td&gt;</code> або <code>&lt;th&gt;</code>.</p>
+                <table class="theory-table">
+                    <thead>
+                        <tr><th>Тег</th><th>Призначення</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><code>&lt;table&gt;</code></td><td>Контейнер таблиці.</td></tr>
+                        <tr><td><code>&lt;caption&gt;</code></td><td>Підпис (назва) таблиці, розміщується одразу після <code>&lt;table&gt;</code>.</td></tr>
+                        <tr><td><code>&lt;thead&gt;</code></td><td>Група рядків заголовка таблиці.</td></tr>
+                        <tr><td><code>&lt;tbody&gt;</code></td><td>Основна частина таблиці з даними.</td></tr>
+                        <tr><td><code>&lt;tfoot&gt;</code></td><td>Нижня частина таблиці (підсумки).</td></tr>
+                        <tr><td><code>&lt;tr&gt;</code></td><td>Рядок таблиці.</td></tr>
+                        <tr><td><code>&lt;th&gt;</code></td><td>Комірка-заголовок, за замовчуванням жирна й по центру.</td></tr>
+                        <tr><td><code>&lt;td&gt;</code></td><td>Звичайна комірка з даними.</td></tr>
+                        <tr><td><code>&lt;colgroup&gt;</code>, <code>&lt;col&gt;</code></td><td>Групування стовпців для задання їм спільного оформлення.</td></tr>
+                    </tbody>
+                </table>
+
+                <h3>Атрибути</h3>
+                <ul>
+                    <li><code>colspan</code> — об'єднує комірку на кілька стовпців.</li>
+                    <li><code>rowspan</code> — об'єднує комірку на кілька рядків (використано в таблиці посилань у розділі «Тема, мета»).</li>
+                    <li><code>scope</code> — вказує, до чого належить заголовок <code>&lt;th&gt;</code>: <code>row</code> або <code>col</code>.</li>
+                    <li><code>headers</code> — пов'язує комірку із заголовками за їхніми <code>id</code>.</li>
+                </ul>
+                <p>Атрибути <code>border</code>, <code>cellpadding</code>, <code>cellspacing</code>, <code>align</code>, <code>bgcolor</code> застаріли. Замість них використовують CSS-властивості <code>border</code>, <code>padding</code>, <code>border-collapse</code>, <code>text-align</code>, <code>background-color</code>.</p>
+            </section>
+
+            <!-- 3.2 Зображення -->
+            <section id="image" class="block">
+                <h2>HTML-код зображення</h2>
+                <p>Зображення використовуються в таблиці модів як превʼю кожної модифікації.</p>
+<pre><code>&lt;img src="images/zone-reborn.jpg" alt="Скриншот моду Zone Reborn" width="110" height="70"&gt;</code></pre>
+
+                <h3>Скриншот зображення</h3>
+                <figure>
+                    <img src="images/image.png" alt="Скриншот зображення мода в таблиці" class="screenshot">
+                    <figcaption>Рис. 2 — Зображення мода Zone Reborn</figcaption>
+                </figure>
+
+                <h3>Теорія: тег &lt;img&gt; та його атрибути</h3>
+                <p>Тег <code>&lt;img&gt;</code> вставляє зображення на сторінку. Він одиночний, тобто не має закриваючого тегу. Підтримуються формати JPG, PNG, GIF, SVG, WebP.</p>
+                <table class="theory-table">
+                    <thead>
+                        <tr><th>Атрибут</th><th>Призначення</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><code>src</code></td><td>Шлях до файлу зображення (обов'язковий). Може бути відносним (<code>images/photo.jpg</code>) або абсолютним (URL).</td></tr>
+                        <tr><td><code>alt</code></td><td>Альтернативний текст. Показується, якщо зображення не завантажилось, і зачитується програмами для незрячих.</td></tr>
+                        <tr><td><code>width</code>, <code>height</code></td><td>Ширина та висота в пікселях. Браузер резервує місце під картинку, і сторінка не «стрибає» під час завантаження.</td></tr>
+                        <tr><td><code>title</code></td><td>Підказка, що з'являється при наведенні курсора.</td></tr>
+                        <tr><td><code>loading</code></td><td><code>lazy</code> — відкладене завантаження, поки зображення не з'явиться в зоні видимості.</td></tr>
+                        <tr><td><code>srcset</code>, <code>sizes</code></td><td>Набір зображень різного розміру для різних екранів.</td></tr>
+                    </tbody>
+                </table>
+                <p>Для зображення з підписом використовують теги <code>&lt;figure&gt;</code> і <code>&lt;figcaption&gt;</code>, як для скриншотів у цьому звіті.</p>
+            </section>
+
+            <!-- 3.3 Форма -->
+            <section id="form" class="block">
+                <h2>HTML-код форми</h2>
+                <p>Форма зворотного зв'язку дозволяє користувачу надіслати запитання. Поля «Ім'я» та «Електронна пошта» обов'язкові.</p>
+<pre><code>&lt;section class="feedback"&gt;
+    &lt;h2&gt;Зворотний зв'язок&lt;/h2&gt;
+
+    &lt;form action="#" method="post" class="feedback__form"&gt;
+        &lt;div class="form-row"&gt;
+            &lt;div class="form-group"&gt;
+                &lt;label for="name"&gt;Ім'я&lt;/label&gt;
+                &lt;input type="text" id="name" name="name" placeholder="Ваше ім'я" required&gt;
+            &lt;/div&gt;
+            &lt;div class="form-group"&gt;
+                &lt;label for="email"&gt;Електронна пошта&lt;/label&gt;
+                &lt;input type="email" id="email" name="email" placeholder="name@example.com" required&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div class="form-group"&gt;
+            &lt;label for="message"&gt;Повідомлення&lt;/label&gt;
+            &lt;textarea id="message" name="message" rows="4" placeholder="Напишіть ваше запитання..."&gt;&lt;/textarea&gt;
+        &lt;/div&gt;
+
+        &lt;button type="submit" class="btn-accent"&gt;Надіслати повідомлення&lt;/button&gt;
+    &lt;/form&gt;
+&lt;/section&gt;</code></pre>
+
+                <h3>Скриншот форми</h3>
+                <figure>
+                    <img src="images/form.png" alt="Скриншот форми зворотного зв'язку" class="screenshot">
+                    <figcaption>Рис. 3 — Форма «Зворотний зв'язок»</figcaption>
+                </figure>
+
+                <h3>Теорія: теги та атрибути форм</h3>
+                <table class="theory-table">
+                    <thead>
+                        <tr><th>Тег / атрибут</th><th>Призначення</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><code>&lt;form&gt;</code></td><td>Контейнер форми. Атрибут <code>action</code> — адреса обробника, <code>method</code> — спосіб передачі (<code>get</code> або <code>post</code>).</td></tr>
+                        <tr><td><code>&lt;label&gt;</code></td><td>Підпис поля. Атрибут <code>for</code> пов'язує його з <code>id</code> поля.</td></tr>
+                        <tr><td><code>&lt;input&gt;</code></td><td>Поле введення. Тип задається атрибутом <code>type</code>: <code>text</code>, <code>email</code>, <code>password</code>, <code>number</code>, <code>checkbox</code>, <code>radio</code> тощо.</td></tr>
+                        <tr><td><code>&lt;textarea&gt;</code></td><td>Багаторядкове текстове поле, висота задається атрибутом <code>rows</code>.</td></tr>
+                        <tr><td><code>&lt;select&gt;</code>, <code>&lt;option&gt;</code></td><td>Випадаючий список.</td></tr>
+                        <tr><td><code>&lt;button&gt;</code></td><td>Кнопка. <code>type="submit"</code> надсилає форму.</td></tr>
+                        <tr><td><code>&lt;fieldset&gt;</code>, <code>&lt;legend&gt;</code></td><td>Групування полів форми з заголовком.</td></tr>
+                        <tr><td><code>name</code></td><td>Ім'я поля, під яким значення передається на сервер.</td></tr>
+                        <tr><td><code>placeholder</code></td><td>Підказка всередині порожнього поля.</td></tr>
+                        <tr><td><code>required</code></td><td>Поле обов'язкове: без нього форма не надішлеться.</td></tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- 3.4 Списки -->
+            <section id="lists" class="block">
+                <h2>HTML-код списків</h2>
+                <p>У розділі «Як користуватися» нумерований список описує послідовні кроки встановлення мода, а маркований — поради, порядок яких не важливий.</p>
+<pre><code>&lt;section class="howto"&gt;
+    &lt;h2&gt;Як користуватися&lt;/h2&gt;
+
+    &lt;h3&gt;Встановлення мода&lt;/h3&gt;
+    &lt;ol&gt;
+        &lt;li&gt;Оберіть гру та знайдіть потрібний мод.&lt;/li&gt;
+        &lt;li&gt;Перевірте версію гри й вимоги мода.&lt;/li&gt;
+        &lt;li&gt;Завантажте мод і дотримуйтеся інструкції автора.&lt;/li&gt;
+    &lt;/ol&gt;
+
+    &lt;h3&gt;Перед запуском&lt;/h3&gt;
+    &lt;ul&gt;
+        &lt;li&gt;Зробіть резервну копію збережень.&lt;/li&gt;
+        &lt;li&gt;Перевірте сумісність з іншими модами.&lt;/li&gt;
+        &lt;li&gt;Використовуйте відповідну версію гри.&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/section&gt;</code></pre>
+
+                <h3>Скриншот списків</h3>
+                <figure>
+                    <img src="images/lists.png" alt="Скриншот списків у розділі Як користуватися" class="screenshot">
+                    <figcaption>Рис. 4 — Нумерований і маркований списки</figcaption>
+                </figure>
+
+                <h3>Теорія: теги та атрибути списків</h3>
+                <table class="theory-table">
+                    <thead>
+                        <tr><th>Тег</th><th>Призначення</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><code>&lt;ol&gt;</code></td><td>Нумерований (впорядкований) список.</td></tr>
+                        <tr><td><code>&lt;ul&gt;</code></td><td>Маркований (невпорядкований) список.</td></tr>
+                        <tr><td><code>&lt;li&gt;</code></td><td>Елемент списку, використовується всередині <code>&lt;ol&gt;</code> і <code>&lt;ul&gt;</code>.</td></tr>
+                        <tr><td><code>&lt;dl&gt;</code>, <code>&lt;dt&gt;</code>, <code>&lt;dd&gt;</code></td><td>Список визначень: термін і його опис.</td></tr>
+                    </tbody>
+                </table>
+
+                <h3>Атрибути</h3>
+                <ul>
+                    <li><code>type</code> для <code>&lt;ol&gt;</code> — вид нумерації: <code>1</code>, <code>A</code>, <code>a</code>, <code>I</code>, <code>i</code>.</li>
+                    <li><code>start</code> — число, з якого починається нумерація.</li>
+                    <li><code>reversed</code> — нумерація у зворотному порядку.</li>
+                    <li><code>value</code> для <code>&lt;li&gt;</code> — номер конкретного елемента.</li>
+                </ul>
+                <p>Вид маркера в <code>&lt;ul&gt;</code> змінюють через CSS-властивість <code>list-style-type</code> (<code>disc</code>, <code>circle</code>, <code>square</code>, <code>none</code>). Списки можна вкладати один в одний.</p>
+            </section>
+
+            <!-- 4. Головна сторінка -->
+            <section id="main-page" class="block">
+                <h2>Головна сторінка WEB-застосунку</h2>
+                <p>Жива сторінка: <a href="https://USERNAME.github.io/IS-4X_appWEB-PrizvyshcheImia-FIOT-2026/" target="_blank">USERNAME.github.io/IS-4X_appWEB-PrizvyshcheImia-FIOT-2026</a></p>
+                <figure>
+                    <img src="images/main-page.png" alt="Скриншот головної сторінки MODHUB" class="screenshot">
+                    <figcaption>Рис. 5 — Головна сторінка WEB-застосунку MODHUB</figcaption>
+                </figure>
+            </section>
+
+            <!-- 5. Код головної сторінки -->
+            <section id="main-code" class="block">
+                <h2>Код головної сторінки WEB-застосунку</h2>
+                <p>Файл <code>index.html</code>:</p>
+<pre class="code-long"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="uk"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;MODHUB — каталог модів&lt;/title&gt;
+    &lt;link rel="preconnect" href="https://fonts.googleapis.com"&gt;
+    &lt;link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"&gt;
+    &lt;link rel="stylesheet" href="css/style.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+    &lt;!-- Шапка сайту --&gt;
+    &lt;header class="header"&gt;
+        &lt;div class="container header__inner"&gt;
+            &lt;a href="index.html" class="logo"&gt;
+                &lt;span class="logo__icon"&gt;M&lt;/span&gt;
+                &lt;span class="logo__text"&gt;MODHUB&lt;/span&gt;
+            &lt;/a&gt;
+
+            &lt;nav class="header__nav"&gt;
+                &lt;a href="about.html" class="link-accent"&gt;Про проєкт і бізнес-логіку&lt;/a&gt;
+            &lt;/nav&gt;
+
+            &lt;div class="header__actions"&gt;
+                &lt;a href="#" class="header__login"&gt;Увійти&lt;/a&gt;
+                &lt;a href="#" class="btn-outline"&gt;Додати мод &lt;span class="arrow-down"&gt;&amp;#9662;&lt;/span&gt;&lt;/a&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/header&gt;
+
+    &lt;main class="container"&gt;
+
+        &lt;!-- Пошук --&gt;
+        &lt;section class="catalog"&gt;
+            &lt;h1&gt;Каталог модів&lt;/h1&gt;
+
+            &lt;form class="search" action="#" method="get"&gt;
+                &lt;svg class="search__icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"&gt;
+                    &lt;circle cx="11" cy="11" r="7"&gt;&lt;/circle&gt;
+                    &lt;line x1="16.5" y1="16.5" x2="21" y2="21"&gt;&lt;/line&gt;
+                &lt;/svg&gt;
+                &lt;input type="text" name="q" placeholder="Пошук модів та ігор" class="search__input"&gt;
+                &lt;button type="submit" class="btn-accent"&gt;
+                    Знайти моди
+                    &lt;svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"&gt;
+                        &lt;circle cx="11" cy="11" r="7"&gt;&lt;/circle&gt;
+                        &lt;line x1="16.5" y1="16.5" x2="21" y2="21"&gt;&lt;/line&gt;
+                    &lt;/svg&gt;
+                &lt;/button&gt;
+            &lt;/form&gt;
+
+            &lt;ul class="games"&gt;
+                &lt;li&gt;&lt;a href="#"&gt;S.T.A.L.K.E.R. 2&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;Cyberpunk 2077&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;Skyrim SE&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;Minecraft&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;GTA V&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;The Witcher 3&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/section&gt;
+
+        &lt;!-- Таблиця популярних модів --&gt;
+        &lt;section class="popular"&gt;
+            &lt;h2&gt;Популярні моди&lt;/h2&gt;
+
+            &lt;table class="mods-table"&gt;
+                &lt;thead&gt;
+                    &lt;tr&gt;
+                        &lt;th&gt;Мод&lt;/th&gt;
+                        &lt;th class="col-num"&gt;Оцінка&lt;/th&gt;
+                        &lt;th class="col-num"&gt;Завантаження&lt;/th&gt;
+                    &lt;/tr&gt;
+                &lt;/thead&gt;
+                &lt;tbody&gt;
+                    &lt;tr&gt;
+                        &lt;td&gt;
+                            &lt;div class="mod"&gt;
+                                &lt;img src="images/zone-reborn.jpg" alt="Скриншот моду Zone Reborn" width="110" height="70"&gt;
+                                &lt;div&gt;
+                                    &lt;p class="mod__meta"&gt;S.T.A.L.K.E.R. 2 / Графіка&lt;/p&gt;
+                                    &lt;h3 class="mod__name"&gt;Zone Reborn&lt;/h3&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/td&gt;
+                        &lt;td class="col-num"&gt;&lt;span class="star"&gt;&amp;#9734;&lt;/span&gt; 4.9&lt;/td&gt;
+                        &lt;td class="col-num muted"&gt;&amp;#10515; 25,4 тис.&lt;/td&gt;
+                    &lt;/tr&gt;
+                    &lt;tr&gt;
+                        &lt;td&gt;
+                            &lt;div class="mod"&gt;
+                                &lt;img src="images/night-city.jpg" alt="Скриншот моду Night City Rewired" width="110" height="70"&gt;
+                                &lt;div&gt;
+                                    &lt;p class="mod__meta"&gt;Cyberpunk 2077 / Геймплей&lt;/p&gt;
+                                    &lt;h3 class="mod__name"&gt;Night City Rewired&lt;/h3&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/td&gt;
+                        &lt;td class="col-num"&gt;&lt;span class="star"&gt;&amp;#9734;&lt;/span&gt; 4.8&lt;/td&gt;
+                        &lt;td class="col-num muted"&gt;&amp;#10515; 42,1 тис.&lt;/td&gt;
+                    &lt;/tr&gt;
+                    &lt;tr&gt;
+                        &lt;td&gt;
+                            &lt;div class="mod"&gt;
+                                &lt;img src="images/nordic-horizons.jpg" alt="Скриншот моду Nordic Horizons" width="110" height="70"&gt;
+                                &lt;div&gt;
+                                    &lt;p class="mod__meta"&gt;Skyrim SE / Графіка&lt;/p&gt;
+                                    &lt;h3 class="mod__name"&gt;Nordic Horizons&lt;/h3&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/td&gt;
+                        &lt;td class="col-num"&gt;&lt;span class="star"&gt;&amp;#9734;&lt;/span&gt; 4.9&lt;/td&gt;
+                        &lt;td class="col-num muted"&gt;&amp;#10515; 85,6 тис.&lt;/td&gt;
+                    &lt;/tr&gt;
+                    &lt;tr&gt;
+                        &lt;td&gt;
+                            &lt;div class="mod"&gt;
+                                &lt;img src="images/vanilla-adventures.jpg" alt="Скриншот моду Vanilla+ Adventures" width="110" height="70"&gt;
+                                &lt;div&gt;
+                                    &lt;p class="mod__meta"&gt;Minecraft / Нові світи&lt;/p&gt;
+                                    &lt;h3 class="mod__name"&gt;Vanilla+ Adventures&lt;/h3&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/td&gt;
+                        &lt;td class="col-num"&gt;&lt;span class="star"&gt;&amp;#9734;&lt;/span&gt; 4.7&lt;/td&gt;
+                        &lt;td class="col-num muted"&gt;&amp;#10515; 31,2 тис.&lt;/td&gt;
+                    &lt;/tr&gt;
+                &lt;/tbody&gt;
+            &lt;/table&gt;
+        &lt;/section&gt;
+
+        &lt;div class="bottom"&gt;
+            &lt;!-- Інструкція (списки) --&gt;
+            &lt;section class="howto"&gt;
+                &lt;h2&gt;Як користуватися&lt;/h2&gt;
+
+                &lt;h3&gt;Встановлення мода&lt;/h3&gt;
+                &lt;ol&gt;
+                    &lt;li&gt;Оберіть гру та знайдіть потрібний мод.&lt;/li&gt;
+                    &lt;li&gt;Перевірте версію гри й вимоги мода.&lt;/li&gt;
+                    &lt;li&gt;Завантажте мод і дотримуйтеся інструкції автора.&lt;/li&gt;
+                &lt;/ol&gt;
+
+                &lt;h3&gt;Перед запуском&lt;/h3&gt;
+                &lt;ul&gt;
+                    &lt;li&gt;Зробіть резервну копію збережень.&lt;/li&gt;
+                    &lt;li&gt;Перевірте сумісність з іншими модами.&lt;/li&gt;
+                    &lt;li&gt;Використовуйте відповідну версію гри.&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/section&gt;
+
+            &lt;!-- Форма зворотного зв'язку --&gt;
+            &lt;section class="feedback"&gt;
+                &lt;h2&gt;Зворотний зв'язок&lt;/h2&gt;
+
+                &lt;form action="#" method="post" class="feedback__form"&gt;
+                    &lt;div class="form-row"&gt;
+                        &lt;div class="form-group"&gt;
+                            &lt;label for="name"&gt;Ім'я&lt;/label&gt;
+                            &lt;input type="text" id="name" name="name" placeholder="Ваше ім'я" required&gt;
+                        &lt;/div&gt;
+                        &lt;div class="form-group"&gt;
+                            &lt;label for="email"&gt;Електронна пошта&lt;/label&gt;
+                            &lt;input type="email" id="email" name="email" placeholder="name@example.com" required&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+
+                    &lt;div class="form-group"&gt;
+                        &lt;label for="message"&gt;Повідомлення&lt;/label&gt;
+                        &lt;textarea id="message" name="message" rows="4" placeholder="Напишіть ваше запитання..."&gt;&lt;/textarea&gt;
+                    &lt;/div&gt;
+
+                    &lt;button type="submit" class="btn-accent"&gt;Надіслати повідомлення&lt;/button&gt;
+                &lt;/form&gt;
+            &lt;/section&gt;
+        &lt;/div&gt;
+
+    &lt;/main&gt;
+
+    &lt;footer class="footer"&gt;
+        &lt;div class="container footer__inner"&gt;
+            &lt;p&gt;&amp;copy; 2026 MODHUB. Створено гравцями для гравців.&lt;/p&gt;
+            &lt;div class="footer__links"&gt;
+                &lt;a href="#"&gt;Конфіденційність&lt;/a&gt;
+                &lt;a href="#"&gt;Умови використання&lt;/a&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/footer&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            </section>
+
+            <!-- 6. Висновки -->
+            <section id="conclusions" class="block">
+                <h2>Висновки</h2>
+                <p>У ході лабораторної роботи було обрано предметну галузь «Каталог модифікацій для комп'ютерних ігор», описано предметне середовище, бізнес-логіку у вигляді сценаріїв, функціональні та нефункціональні вимоги до WEB-застосунку MODHUB.</p>
+                <p>У Figma створено макет двох сторінок застосунку. Встановлено Git і GitHub Desktop, створено три репозиторії: для WEB-застосунку, для самостійних робіт і для звітного документа. Для кожного налаштовано GitHub Pages і отримано посилання на живу сторінку.</p>
+                <p>За макетом зверстано головну сторінку застосунку з використанням заголовків різних рівнів, зображень, таблиці, нумерованих і маркованих списків, форми та посилання на сторінку з описом бізнес-логіки. Також створено шаблон звітного HTML-документа, який буде використовуватись для всіх наступних лабораторних робіт.</p>
+                <p>Під час роботи отримано практичні навички роботи з репозиторіями та структурною розміткою HTML-документа.</p>
+            </section>
+
+        </main>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2026 Захаров Олег, група ІА-44, ФІОТ</p>
+    </footer>
+
+</body>
+</html>

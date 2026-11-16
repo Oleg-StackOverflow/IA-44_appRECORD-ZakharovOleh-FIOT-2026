@@ -1,0 +1,331 @@
+/* ===== Загальні стилі ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'PT Sans', Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.55;
+    color: #1f2328;
+    background-color: #eef0f3;
+}
+
+h1, h2, h3 {
+    font-family: 'PT Serif', 'Times New Roman', serif;
+}
+
+a {
+    color: #1a56b8;
+}
+
+code {
+    font-family: Consolas, 'Courier New', monospace;
+    font-size: 0.9em;
+    background-color: #eef0f3;
+    padding: 1px 4px;
+    border-radius: 3px;
+}
+
+/* ===== Шапка ===== */
+.header {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 28px 20px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.header__text {
+    flex: 1;
+    text-align: center;
+}
+
+.header h1 {
+    font-size: 22px;
+    line-height: 1.35;
+    text-transform: uppercase;
+}
+
+.header__student {
+    margin-top: 12px;
+}
+
+.header__photo {
+    width: 120px;
+    height: 150px;
+    object-fit: cover;
+    border: 1px solid #b9bfc8;
+    border-radius: 4px;
+    background-color: #fff;
+}
+
+/* ===== Кнопки лабораторних ===== */
+.labs {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    gap: 8px;
+}
+
+.labs__item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-height: 56px;
+    padding: 6px;
+    font-size: 13px;
+    line-height: 1.25;
+    color: #1f2328;
+    text-decoration: none;
+    background-color: #fff;
+    border: 1px solid #9aa2ad;
+    border-radius: 14px;
+}
+
+.labs__item:hover {
+    border-color: #1f2328;
+}
+
+.labs__item--active {
+    background-color: #ffe94d;
+    border-color: #1f2328;
+    font-weight: 700;
+}
+
+.labs__item--disabled {
+    color: #9aa2ad;
+    pointer-events: none;
+}
+
+/* ===== Основна сітка ===== */
+.layout {
+    max-width: 1240px;
+    margin: 24px auto 0;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: 270px 1fr;
+    gap: 24px;
+    align-items: start;
+}
+
+/* ===== Меню ===== */
+.menu {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    position: sticky;
+    top: 16px;
+}
+
+.menu__item {
+    display: block;
+    padding: 10px 18px;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.3;
+    color: #1f2328;
+    text-decoration: none;
+    background-color: #fff;
+    border: 1px solid #9aa2ad;
+    border-radius: 999px;
+}
+
+.menu__item--sub {
+    margin-left: 40px;
+    font-weight: 400;
+    font-size: 13px;
+    text-align: center;
+}
+
+.menu__item:hover {
+    border-color: #1f2328;
+    background-color: #fffbe0;
+}
+
+/* ===== Місце виведення інформації ===== */
+.content {
+    background-color: #fff;
+    border: 1px solid #c9ced6;
+    min-height: 600px;
+    padding: 32px 40px;
+    min-width: 0;
+}
+
+/* показуємо тільки вибраний розділ (через :target) */
+.block {
+    display: none;
+}
+
+.block:target {
+    display: block;
+}
+
+/* якщо нічого не вибрано — показуємо перший розділ */
+.content:not(:has(.block:target)) #topic {
+    display: block;
+}
+
+.block h2 {
+    font-size: 26px;
+    margin-bottom: 16px;
+}
+
+.block h2:not(:first-child) {
+    margin-top: 36px;
+}
+
+.block h3 {
+    font-size: 19px;
+    margin: 26px 0 10px;
+}
+
+.block p {
+    margin-bottom: 12px;
+    max-width: 75ch;
+}
+
+.block ul,
+.block ol {
+    padding-left: 24px;
+    margin-bottom: 12px;
+}
+
+.block li {
+    margin-bottom: 4px;
+}
+
+/* ===== Код ===== */
+pre {
+    background-color: #1e2329;
+    color: #e3e6ea;
+    padding: 18px 20px;
+    border-radius: 6px;
+    overflow-x: auto;
+    font-size: 13px;
+    line-height: 1.5;
+    margin: 10px 0 16px;
+    tab-size: 4;
+}
+
+pre code {
+    background: none;
+    padding: 0;
+    font-size: inherit;
+}
+
+.code-long {
+    max-height: 640px;
+    overflow-y: auto;
+}
+
+/* ===== Таблиці у звіті ===== */
+.links-table,
+.theory-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 10px 0 16px;
+    font-size: 15px;
+}
+
+.links-table th,
+.links-table td,
+.theory-table th,
+.theory-table td {
+    border: 1px solid #c9ced6;
+    padding: 8px 12px;
+    text-align: left;
+    vertical-align: top;
+}
+
+.links-table th,
+.theory-table thead th {
+    background-color: #f4f5f7;
+}
+
+.links-table td:nth-child(2) {
+    white-space: nowrap;
+}
+
+.links-table a {
+    word-break: break-all;
+}
+
+.theory-table td:first-child {
+    white-space: nowrap;
+}
+
+/* ===== Скриншоти ===== */
+figure {
+    margin: 10px 0 20px;
+}
+
+.screenshot {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    border: 1px solid #c9ced6;
+}
+
+figcaption {
+    margin-top: 8px;
+    font-size: 14px;
+    color: #5b636e;
+    font-style: italic;
+}
+
+/* ===== Футер ===== */
+.footer {
+    text-align: center;
+    font-size: 14px;
+    color: #5b636e;
+    padding: 30px 20px;
+}
+
+/* ===== Адаптивність ===== */
+@media (max-width: 1000px) {
+    .labs {
+        grid-template-columns: repeat(5, 1fr);
+    }
+
+    .layout {
+        grid-template-columns: 1fr;
+    }
+
+    .menu {
+        position: static;
+    }
+
+    .menu__item--sub {
+        margin-left: 24px;
+    }
+}
+
+@media (max-width: 600px) {
+    .header {
+        flex-direction: column-reverse;
+    }
+
+    .header h1 {
+        font-size: 18px;
+    }
+
+    .labs {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .content {
+        padding: 20px;
+    }
+
+    .theory-table td:first-child {
+        white-space: normal;
+    }
+}
