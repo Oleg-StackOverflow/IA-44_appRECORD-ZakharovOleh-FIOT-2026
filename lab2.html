@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лабораторна робота №2 — Звіти з лабораторних робіт</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&family=PT+Serif:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Шапка звіту -->
+    <header class="header">
+        <div class="header__text">
+            <h1>Звіти з лабораторних робіт<br>
+                з дисципліни «WEB-орієнтовані технології. Frontend розробки»</h1>
+            <p class="header__student">Виконавець: студент групи <b>ІА-44</b> Захаров Олег</p>
+        </div>
+        <img src="images/photo.jpg" alt="Фото студента" class="header__photo" width="120" height="150">
+    </header>
+
+    <!-- Навігація по лабораторних роботах -->
+    <nav class="labs">
+        <a href="index.html" class="labs__item">Лабораторна робота №1</a>
+        <a href="lab2.html" class="labs__item labs__item--active">Лабораторна робота №2</a>
+        <a href="#" class="labs__item labs__item--disabled">Лабораторна робота №3</a>
+        <a href="#" class="labs__item labs__item--disabled">Лабораторна робота №4</a>
+        <a href="#" class="labs__item labs__item--disabled">Лабораторна робота №5</a>
+        <a href="#" class="labs__item labs__item--disabled">Лабораторна робота №6</a>
+        <a href="#" class="labs__item labs__item--disabled">Лабораторна робота №7</a>
+        <a href="#" class="labs__item labs__item--disabled">Лабораторна робота №8</a>
+        <a href="#" class="labs__item labs__item--disabled">Лабораторна робота №9</a>
+    </nav>
+
+    <div class="layout">
+
+        <!-- Меню лабораторної роботи -->
+        <aside class="menu">
+            <a href="#topic" class="menu__item">Тема, мета ЛР №2, місце розташування сайту, звіту</a>
+            <a href="#connect" class="menu__item">Способи підключення стилів</a>
+            <a href="#selectors" class="menu__item">Селектори</a>
+            <a href="#tag" class="menu__item menu__item--sub">Селектори тегу</a>
+            <a href="#class" class="menu__item menu__item--sub">Селектори класу</a>
+            <a href="#id" class="menu__item menu__item--sub">Селектори ідентифікаторів</a>
+            <a href="#other" class="menu__item menu__item--sub">Інші селектори</a>
+            <a href="#css" class="menu__item">CSS: шрифти, текст, таблиці, фон, контур, списки, CSS просунутий</a>
+            <a href="#conclusions" class="menu__item">Висновки до ЛР №2</a>
+        </aside>
+
+        <!-- Місце виведення інформації -->
+        <main class="content">
+
+            <!-- 1. Тема, мета -->
+            <section id="topic" class="block">
+                <h2>Лабораторна робота №2</h2>
+
+                <h3>Тема</h3>
+                <p>Каскадні таблиці стилів. Селектори тегу, класу, ідентифікатора. Стильове оформлення текстових елементів в HTML-документах.</p>
+
+                <h3>Мета</h3>
+                <p>Придбати практичні навички роботи з селекторами, ідентифікаторами, списками, різноманітними властивостями кольору і фону, зовнішніми та внутрішніми відступами, плаваючими елементами, оформленням текстових елементів.</p>
+
+                <h3>Місце розташування</h3>
+                <table class="links-table">
+                    <tr>
+                        <th rowspan="2">WEB-застосунок MODHUB</th>
+                        <td>Репозиторій</td>
+                        <td><a href="https://github.com/Oleg-StackOverflow/IA-44_appWEB-ZakharovOleh-FIOT-2026" target="_blank">github.com/Oleg-StackOverflow/IA-44_appWEB-ZakharovOleh-FIOT-2026</a></td>
+                    </tr>
+                    <tr>
+                        <td>Жива сторінка</td>
+                        <td><a href="https://Oleg-StackOverflow.github.io/IA-44_appWEB-ZakharovOleh-FIOT-2026/" target="_blank">Oleg-StackOverflow.github.io/IA-44_appWEB-ZakharovOleh-FIOT-2026</a></td>
+                    </tr>
+                    <tr>
+                        <th rowspan="2">Звітний HTML-документ</th>
+                        <td>Репозиторій</td>
+                        <td><a href="https://github.com/Oleg-StackOverflow/IA-44_appRECORD-ZakharovOleh-FIOT-2026" target="_blank">github.com/Oleg-StackOverflow/IA-44_appRECORD-ZakharovOleh-FIOT-2026</a></td>
+                    </tr>
+                    <tr>
+                        <td>Жива сторінка</td>
+                        <td><a href="https://Oleg-StackOverflow.github.io/IA-44_appRECORD-ZakharovOleh-FIOT-2026/" target="_blank">Oleg-StackOverflow.github.io/IA-44_appRECORD-ZakharovOleh-FIOT-2026</a></td>
+                    </tr>
+                </table>
+            </section>
+
+            <!-- 2. Способи підключення -->
+            <section id="connect" class="block">
+                <h2>Способи підключення стилів</h2>
+
+                <h3>Зовнішня таблиця стилів (index.html, about.html)</h3>
+<pre><code>&lt;link rel="preconnect" href="https://fonts.googleapis.com"&gt;
+&lt;link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"&gt;
+&lt;link rel="stylesheet" href="css/style.css"&gt;</code></pre>
+
+                <h3>Внутрішня таблиця стилів (about.html)</h3>
+<pre><code>&lt;style&gt;
+    .about h2 {
+        padding-bottom: 8px;
+        border-bottom: 1px solid var(--border);
+    }
+&lt;/style&gt;</code></pre>
+
+                <h3>Вбудований стиль (about.html)</h3>
+<pre><code>&lt;h1 style="color: var(--accent);"&gt;Про проєкт MODHUB&lt;/h1&gt;</code></pre>
+
+                <figure>
+                    <img src="images/lab2-connect.png" alt="Сторінка about.html" class="screenshot">
+                    <figcaption>Рис. 1 — Сторінка about.html: колір заголовка задано вбудованим стилем, лінії під заголовками — внутрішньою таблицею стилів</figcaption>
+                </figure>
+            </section>
+
+            <!-- 3. Селектори -->
+            <section id="selectors" class="block">
+                <h2>Селектори</h2>
+                <p>У WEB-застосунку MODHUB застосовано такі селектори:</p>
+                <ul>
+                    <li><a href="#tag">Селектори тегу</a> — <code>body</code>, <code>a</code>, <code>h1</code>, <code>h2</code>, <code>h3</code></li>
+                    <li><a href="#class">Селектори класу</a> — <code>.logo</code>, <code>.btn-accent</code>, <code>.btn-outline</code></li>
+                    <li><a href="#id">Селектори ідентифікаторів</a> — <code>#popular</code>, <code>#feedback</code>, <code>#message</code></li>
+                    <li><a href="#other">Інші селектори</a> — універсальний, дочірній, сусідній, селектор атрибута</li>
+                </ul>
+            </section>
+
+            <!-- 3.1 Селектори тегу -->
+            <section id="tag" class="block">
+                <h2>Селектори тегу</h2>
+
+                <h3>HTML-код</h3>
+<pre><code>&lt;body&gt;
+    ...
+    &lt;h1&gt;Каталог модів&lt;/h1&gt;
+    ...
+    &lt;h2&gt;Популярні моди&lt;/h2&gt;
+    ...
+    &lt;a href="about.html" class="link-accent"&gt;Про проєкт і бізнес-логіку&lt;/a&gt;
+&lt;/body&gt;</code></pre>
+
+                <h3>CSS-код</h3>
+<pre><code>body {
+    font-family: 'Inter', Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+    background-color: var(--bg);
+    color: var(--text);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+h1 {
+    font-size: 28px;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    margin: 32px 0 20px;
+}
+
+h2 {
+    font-size: 22px;
+    font-weight: 400;
+    margin-bottom: 18px;
+}
+
+h3 {
+    font-size: 15px;
+    font-weight: 600;
+}</code></pre>
+
+                <h3>Зображення в браузері</h3>
+                <figure>
+                    <img src="images/lab2-tag.png" alt="Заголовок Каталог модів" class="screenshot">
+                    <figcaption>Рис. 2 — Заголовок h1, оформлений селектором тегу</figcaption>
+                </figure>
+            </section>
+
+            <!-- 3.2 Селектори класу -->
+            <section id="class" class="block">
+                <h2>Селектори класу</h2>
+
+                <h3>HTML-код</h3>
+<pre><code>&lt;a href="index.html" class="logo"&gt;
+    &lt;span class="logo__icon"&gt;M&lt;/span&gt;
+    &lt;span class="logo__text"&gt;MODHUB&lt;/span&gt;
+&lt;/a&gt;
+
+&lt;a href="#" class="btn-outline"&gt;Додати мод &lt;span class="arrow-down"&gt;&amp;#9662;&lt;/span&gt;&lt;/a&gt;
+
+&lt;button type="submit" class="btn-accent"&gt;
+    Знайти моди
+    &lt;svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"&gt;
+        &lt;circle cx="11" cy="11" r="7"&gt;&lt;/circle&gt;
+        &lt;line x1="16.5" y1="16.5" x2="21" y2="21"&gt;&lt;/line&gt;
+    &lt;/svg&gt;
+&lt;/button&gt;</code></pre>
+
+                <h3>CSS-код</h3>
+<pre><code>.logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.logo__icon {
+    width: 26px;
+    height: 26px;
+    background-color: var(--accent);
+    color: var(--bg);
+    border-radius: var(--radius);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.btn-accent {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: var(--accent);
+    color: var(--bg);
+    border: none;
+    border-radius: var(--radius);
+    padding: 10px 16px;
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s, box-shadow 0.2s;
+}
+
+.btn-accent:hover {
+    background-color: var(--accent-hover);
+    box-shadow: 0 0 0 4px rgba(197, 240, 72, 0.15);
+}
+
+.btn-outline {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid var(--accent);
+    border-radius: var(--radius);
+    padding: 6px 12px;
+    font-size: 13px;
+    transition: background-color 0.2s;
+}
+
+.btn-outline:hover {
+    background-color: rgba(197, 240, 72, 0.1);
+}</code></pre>
+
+                <h3>Зображення в браузері</h3>
+                <figure>
+                    <img src="images/lab2-class-1.png" alt="Шапка з логотипом і кнопкою Додати мод" class="screenshot">
+                    <figcaption>Рис. 3 — Логотип (.logo) і кнопка «Додати мод» (.btn-outline)</figcaption>
+                </figure>
+                <figure>
+                    <img src="images/lab2-class-2.png" alt="Форма пошуку з кнопкою Знайти моди" class="screenshot">
+                    <figcaption>Рис. 4 — Кнопка «Знайти моди» (.btn-accent)</figcaption>
+                </figure>
+            </section>
+
+            <!-- 3.3 Селектори ідентифікаторів -->
+            <section id="id" class="block">
+                <h2>Селектори ідентифікаторів</h2>
+
+                <h3>HTML-код</h3>
+<pre><code>&lt;section id="popular"&gt;
+    ...
+&lt;/section&gt;
+
+&lt;section id="feedback"&gt;
+    &lt;h2&gt;Зворотний зв'язок&lt;/h2&gt;
+
+    &lt;form action="#" method="post" class="feedback__form"&gt;
+        &lt;div class="form-row"&gt;
+            &lt;div class="form-group"&gt;
+                &lt;label for="name"&gt;Ім'я&lt;/label&gt;
+                &lt;input type="text" id="name" name="name" placeholder="Ваше ім'я" required&gt;
+            &lt;/div&gt;
+            &lt;div class="form-group"&gt;
+                &lt;label for="email"&gt;Електронна пошта&lt;/label&gt;
+                &lt;input type="email" id="email" name="email" placeholder="name@example.com" required&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div class="form-group"&gt;
+            &lt;label for="message"&gt;Повідомлення&lt;/label&gt;
+            &lt;textarea id="message" name="message" rows="4" placeholder="Напишіть ваше запитання..."&gt;&lt;/textarea&gt;
+        &lt;/div&gt;
+
+        &lt;button type="submit" class="btn-accent"&gt;Надіслати повідомлення&lt;/button&gt;
+    &lt;/form&gt;
+&lt;/section&gt;</code></pre>
+
+                <h3>CSS-код</h3>
+<pre><code>#popular {
+    margin-top: 44px;
+}
+
+#feedback h2 {
+    margin-bottom: 18px;
+}
+
+#message {
+    min-height: 100px;
+    resize: vertical;
+}</code></pre>
+
+                <h3>Зображення в браузері</h3>
+                <figure>
+                    <img src="images/lab2-id.png" alt="Форма зворотного зв'язку" class="screenshot">
+                    <figcaption>Рис. 5 — Розділ #feedback і поле #message</figcaption>
+                </figure>
+            </section>
+
+            <!-- 3.4 Інші селектори -->
+            <section id="other" class="block">
+                <h2>Інші селектори</h2>
+
+                <h3>Універсальний селектор</h3>
+<pre><code>* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}</code></pre>
+
+                <h3>Дочірній селектор</h3>
+<pre><code>&lt;ul class="games"&gt;
+    &lt;li&gt;&lt;a href="#"&gt;S.T.A.L.K.E.R. 2&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#"&gt;Cyberpunk 2077&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#"&gt;Skyrim SE&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#"&gt;Minecraft&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#"&gt;GTA V&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#"&gt;The Witcher 3&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+<pre><code>/* дочірній селектор */
+.games &gt; li &gt; a {
+    display: block;
+    background-color: var(--surface);
+    padding: 9px 12px;
+    font-size: 12px;
+    font-weight: 600;
+    border-radius: 2px;
+    border-left: 2px solid transparent;
+    transition: background-color 0.2s, border-color 0.2s;
+}
+
+.games &gt; li &gt; a:hover {
+    background-color: var(--surface-hover);
+    border-left-color: var(--accent);
+}
+
+/* дочірній селектор */
+.header__actions &gt; a:first-child:hover {
+    color: var(--accent);
+}</code></pre>
+                <figure>
+                    <img src="images/lab2-child.png" alt="Рядок кнопок з іграми" class="screenshot">
+                    <figcaption>Рис. 6 — Кнопки ігор, на «Skyrim SE» наведено курсор</figcaption>
+                </figure>
+
+                <h3>Сусідній селектор</h3>
+<pre><code>&lt;h3&gt;Встановлення мода&lt;/h3&gt;
+&lt;ol&gt;
+    ...
+&lt;/ol&gt;
+
+&lt;h3&gt;Перед запуском&lt;/h3&gt;
+&lt;ul&gt;
+    ...
+&lt;/ul&gt;</code></pre>
+<pre><code>/* сусідній селектор: список одразу після підзаголовка */
+.howto h3 + ol,
+.howto h3 + ul {
+    margin-top: 8px;
+    font-size: 13px;
+    color: var(--text-soft);
+}</code></pre>
+
+                <h3>Селектор атрибута</h3>
+<pre><code>&lt;input type="text" id="name" name="name" placeholder="Ваше ім'я" required&gt;
+&lt;input type="email" id="email" name="email" placeholder="name@example.com" required&gt;
+
+&lt;a href="https://github.com/" target="_blank"&gt;GitHub&lt;/a&gt;</code></pre>
+<pre><code>/* селектори атрибутів */
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group textarea {
+    width: 100%;
+    background-color: var(--surface);
+    border: 1px solid var(--border-input);
+    border-radius: 3px;
+    color: var(--text);
+    font-family: inherit;
+    font-size: 13px;
+    padding: 9px 10px;
+    transition: border-color 0.2s;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--accent);
+}
+
+/* селектор атрибута: зовнішні посилання отримують стрілку */
+a[href^="http"]::after {
+    content: " \2197";
+}</code></pre>
+                <figure>
+                    <img src="images/lab2-attr.png" alt="Футер з посиланням GitHub зі стрілкою" class="screenshot">
+                    <figcaption>Рис. 7 — Зовнішнє посилання «GitHub» отримало стрілку</figcaption>
+                </figure>
+            </section>
+
+            <!-- 4. CSS -->
+            <section id="css" class="block">
+                <h2>CSS: шрифти, текст, таблиці, фон, контур, списки, CSS просунутий</h2>
+
+                <h3>Шрифти</h3>
+<pre><code>&lt;link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"&gt;
+
+body {
+    font-family: 'Inter', Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+    background-color: var(--bg);
+    color: var(--text);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.mod__meta {
+    font-size: 11px;
+    color: var(--text-muted);
+    margin-bottom: 4px;
+}
+
+.mod__name {
+    font-size: 16px;
+    font-weight: 400;
+}</code></pre>
+                <figure>
+                    <img src="images/lab2-font.png" alt="Рядок таблиці з назвою мода" class="screenshot">
+                    <figcaption>Рис. 8 — Шрифт Inter різного розміру та товщини</figcaption>
+                </figure>
+
+                <h3>Колір тексту</h3>
+<pre><code>.link-accent {
+    color: var(--accent);
+    font-size: 13px;
+}
+
+.link-accent:hover {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.muted {
+    color: var(--text-muted);
+}
+
+.arrow-down {
+    font-size: 10px;
+    color: var(--text-muted);
+}</code></pre>
+                <figure>
+                    <img src="images/lab2-text.png" alt="Шапка з посиланням акцентного кольору" class="screenshot">
+                    <figcaption>Рис. 9 — Посилання акцентного кольору та приглушений текст</figcaption>
+                </figure>
+
+                <h3>Фон</h3>
+<pre><code>.header {
+    border-bottom: 1px solid var(--border);
+    background: linear-gradient(180deg, #17191c 0%, var(--bg) 100%);
+}
+
+.search {
+    display: flex;
+    align-items: center;
+    background-color: var(--surface);
+    border: 1px solid var(--border-input);
+    border-radius: var(--radius);
+    padding: 4px 4px 4px 14px;
+    transition: border-color 0.2s;
+}
+
+/* дочірній селектор */
+.games &gt; li &gt; a {
+    display: block;
+    background-color: var(--surface);
+    padding: 9px 12px;
+    font-size: 12px;
+    font-weight: 600;
+    border-radius: 2px;
+    border-left: 2px solid transparent;
+    transition: background-color 0.2s, border-color 0.2s;
+}
+
+.games &gt; li &gt; a:hover {
+    background-color: var(--surface-hover);
+    border-left-color: var(--accent);
+}</code></pre>
+                <figure>
+                    <img src="images/lab2-bg.png" alt="Футер з темнішим фоном" class="screenshot">
+                    <figcaption>Рис. 10 — Фон кнопок ігор і поля пошуку</figcaption>
+                </figure>
+
+                <h3>Контур</h3>
+<pre><code>/* контур для навігації з клавіатури */
+a:focus-visible,
+button:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+}</code></pre>
+                <figure>
+                    <img src="images/lab2-outline.png" alt="Посилання в шапці з контуром" class="screenshot">
+                    <figcaption>Рис. 11 — Контур (outline) навколо посилання при переході клавішею Tab</figcaption>
+                </figure>
+<pre><code>.btn-outline {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid var(--accent);
+    border-radius: var(--radius);
+    padding: 6px 12px;
+    font-size: 13px;
+    transition: background-color 0.2s;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--accent);
+}
+
+.mods-table td {
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 12px;
+}</code></pre>
+                <figure>
+                    <img src="images/lab2-border.png" alt="Поле форми з рамкою акцентного кольору" class="screenshot">
+                    <figcaption>Рис. 12 — Рамка (border) поля «Електронна пошта» у фокусі</figcaption>
+                </figure>
+
+                <h3>Таблиці</h3>
+<pre><code>.mods-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.mods-table th {
+    font-size: 11px;
+    font-weight: 400;
+    color: var(--text-muted);
+    text-align: left;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border);
+}
+
+.mods-table td {
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 12px;
+}
+
+.mods-table tbody tr {
+    transition: background-color 0.2s;
+}
+
+.mods-table tbody tr:hover {
+    background-color: var(--surface);
+}
+
+.mods-table tbody tr:hover .mod img {
+    transform: scale(1.05);
+}</code></pre>
+                <figure>
+                    <img src="images/lab2-table.png" alt="Таблиця модів з підсвіченим рядком" class="screenshot">
+                    <figcaption>Рис. 13 — Таблиця модів, на другий рядок наведено курсор</figcaption>
+                </figure>
+
+                <h3>Багаторівневі списки</h3>
+<pre><code>&lt;h3&gt;Перед запуском&lt;/h3&gt;
+&lt;ul&gt;
+    &lt;li&gt;Зробіть резервну копію збережень.&lt;/li&gt;
+    &lt;li&gt;Перевірте сумісність з іншими модами:
+        &lt;ul&gt;
+            &lt;li&gt;порядок завантаження модів;&lt;/li&gt;
+            &lt;li&gt;чи не змінюють моди одні й ті самі файли.&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/li&gt;
+    ...
+&lt;/ul&gt;</code></pre>
+<pre><code>/* нумерований список із власними лічильниками */
+.howto ol {
+    list-style: none;
+    counter-reset: step;
+}
+
+.howto ol &gt; li {
+    counter-increment: step;
+    position: relative;
+    padding-left: 28px;
+    margin-bottom: 6px;
+}
+
+.howto ol &gt; li::before {
+    content: counter(step);
+    position: absolute;
+    left: 0;
+    top: 1px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background-color: var(--accent);
+    color: var(--bg);
+    font-size: 11px;
+    font-weight: 700;
+    text-align: center;
+    line-height: 18px;
+}
+
+/* багаторівневий маркований список */
+.howto ul {
+    padding-left: 18px;
+    list-style-type: square;
+}
+
+.howto ul li::marker {
+    color: var(--accent);
+}
+
+.howto ul ul {
+    margin-top: 4px;
+    list-style-type: circle;
+    color: var(--text-muted);
+}
+
+.howto ul ul li::marker {
+    color: var(--text-muted);
+}</code></pre>
+                <figure>
+                    <img src="images/lab2-lists.png" alt="Нумерований і багаторівневий маркований список" class="screenshot">
+                    <figcaption>Рис. 14 — Нумерований список і багаторівневий маркований список</figcaption>
+                </figure>
+
+                <h3>CSS просунутий</h3>
+                <p>Змінні CSS:</p>
+<pre><code>:root {
+    --bg: #131416;
+    --bg-dark: #0f1012;
+    --surface: #1b1d20;
+    --surface-hover: #24272b;
+    --border: #25272b;
+    --border-input: #2a2c31;
+    --text: #e8e9eb;
+    --text-soft: #c4c7cc;
+    --text-muted: #8b8f96;
+    --accent: #c5f048;
+    --accent-hover: #d4f76e;
+    --radius: 4px;
+}
+
+.star {
+    color: var(--accent);
+}
+
+.logo__icon {
+    width: 26px;
+    height: 26px;
+    background-color: var(--accent);
+    color: var(--bg);
+    border-radius: var(--radius);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 16px;
+}</code></pre>
+                <p>Переходи, трансформації, тіні:</p>
+<pre><code>.btn-accent:hover {
+    background-color: var(--accent-hover);
+    box-shadow: 0 0 0 4px rgba(197, 240, 72, 0.15);
+}
+
+.mod img {
+    width: 110px;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 3px;
+    transition: transform 0.3s;
+}
+
+.mods-table tbody tr:hover .mod img {
+    transform: scale(1.05);
+}
+
+.search:focus-within {
+    border-color: var(--accent);
+}</code></pre>
+                <figure>
+                    <img src="images/lab2-shadow.png" alt="Кнопка Знайти моди з тінню при наведенні" class="screenshot">
+                    <figcaption>Рис. 15 — Тінь кнопки при наведенні</figcaption>
+                </figure>
+                <p>Flexbox і Grid:</p>
+<pre><code>.header__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 62px;
+}
+
+.games {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 10px;
+    margin-top: 12px;
+}
+
+.bottom {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin: 44px 0 50px;
+}</code></pre>
+                <p>Медіазапити:</p>
+<pre><code>@media (max-width: 800px) {
+    .container {
+        padding: 0 20px;
+    }
+
+    .header__nav {
+        display: none;
+    }
+
+    .games {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .bottom {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 500px) {
+    .games {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .mod img {
+        width: 80px;
+        height: 52px;
+    }
+
+    .mods-table .col-num {
+        width: 70px;
+    }
+
+    .footer__inner {
+        flex-direction: column;
+        gap: 10px;
+    }
+}</code></pre>
+                <figure class="figure-mobile">
+                    <img src="images/lab2-mobile.png" alt="Головна сторінка на ширині телефона" class="screenshot">
+                    <figcaption>Рис. 16 — Головна сторінка на екрані шириною 390 px</figcaption>
+                </figure>
+            </section>
+
+            <!-- 6. Висновки -->
+            <section id="conclusions" class="block">
+                <h2>Висновки до ЛР №2</h2>
+                <p>У ході лабораторної роботи було розглянуто способи підключення CSS до HTML-документа: зовнішню таблицю стилів, внутрішню таблицю в тезі <code>&lt;style&gt;</code> та інлайн-стилі. Усі три способи застосовано у WEB-застосунку MODHUB.</p>
+                <p>На практиці використано селектори тегів, класів та ідентифікаторів, а також універсальний, дочірній, сусідній селектори та селектори атрибутів. Розібрано різницю між каскадуванням і спадкуванням та роль специфічності селекторів.</p>
+                <p>Виконано стильове оформлення текстових елементів: підключено шрифт, налаштовано кольори тексту і фону, контур фокусу, оформлення таблиці, багаторівневі списки з власними лічильниками. З розділу «CSS просунутий» застосовано змінні, переходи, трансформації, тіні, Flexbox, Grid і медіазапити.</p>
+                <p>Звітний HTML-документ доповнено розділом лабораторної роботи №2.</p>
+            </section>
+
+        </main>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2026 Захаров Олег, група ІА-44, ФІОТ</p>
+    </footer>
+
+</body>
+</html>

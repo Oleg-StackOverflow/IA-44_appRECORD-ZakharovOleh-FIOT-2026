@@ -329,3 +329,7 @@ figcaption {
         white-space: normal;
     }
 }
+
+.figure-mobile img {
+    max-width: 320px;
+}
