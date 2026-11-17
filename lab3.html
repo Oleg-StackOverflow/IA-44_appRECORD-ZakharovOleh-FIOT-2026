@@ -1,0 +1,2884 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лабораторна робота №3 — Звіти з лабораторних робіт</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&family=PT+Serif:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Шапка звіту -->
+    <header class="header">
+        <div class="header__text">
+            <h1>Звіти з лабораторних робіт<br>
+                з дисципліни «WEB-орієнтовані технології. Frontend розробки»</h1>
+            <p class="header__student">Виконавець: студент групи <b>ІА-44</b> Захаров Олег</p>
+        </div>
+        <img src="images/photo.jpg" alt="Фото студента" class="header__photo" width="120" height="150">
+    </header>
+
+    <!-- Навігація по лабораторних роботах -->
+    <nav class="labs">
+        <a href="index.html" class="labs__item">Лабораторна робота №1</a>
+        <a href="lab2.html" class="labs__item">Лабораторна робота №2</a>
+        <a href="lab3.html" class="labs__item labs__item--active">Лабораторна робота №3</a>
+        <a href="#" class="labs__item labs__item--disabled">Лабораторна робота №4</a>
+        <a href="#" class="labs__item labs__item--disabled">Лабораторна робота №5</a>
+        <a href="#" class="labs__item labs__item--disabled">Лабораторна робота №6</a>
+        <a href="#" class="labs__item labs__item--disabled">Лабораторна робота №7</a>
+        <a href="#" class="labs__item labs__item--disabled">Лабораторна робота №8</a>
+        <a href="#" class="labs__item labs__item--disabled">Лабораторна робота №9</a>
+    </nav>
+
+    <div class="layout">
+
+        <!-- Меню лабораторної роботи -->
+        <aside class="menu">
+            <a href="#topic" class="menu__item">Тема, мета, місце розташування сайту, звіту</a>
+            <a href="#task1" class="menu__item">Завдання №1. Зовнішній вигляд макету. Код макету</a>
+            <a href="#task1-view" class="menu__item menu__item--sub">Зовнішній вигляд сайту</a>
+            <a href="#task1-html" class="menu__item menu__item--sub">HTML-код</a>
+            <a href="#task1-css" class="menu__item menu__item--sub">CSS-код</a>
+            <a href="#task1-adaptive" class="menu__item menu__item--sub">Адаптивна верстка</a>
+            <a href="#task2" class="menu__item">Завдання №2</a>
+            <a href="#table-fixed" class="menu__item menu__item--sub">Фіксована таблична верстка</a>
+            <a href="#table-rubber" class="menu__item menu__item--sub">Гумова таблична верстка</a>
+            <a href="#block-fixed" class="menu__item menu__item--sub">Фіксована блокова верстка</a>
+            <a href="#block-rubber" class="menu__item menu__item--sub">Гумова блокова верстка</a>
+            <a href="#task3" class="menu__item">Завдання №3 Flexbox</a>
+            <a href="#flex-view" class="menu__item menu__item--sub">Зовнішній вигляд сторінки</a>
+            <a href="#flex-html" class="menu__item menu__item--sub">HTML-код</a>
+            <a href="#flex-css" class="menu__item menu__item--sub">CSS-код сторінки</a>
+            <a href="#conclusions" class="menu__item">Висновки</a>
+        </aside>
+
+        <!-- Місце виведення інформації -->
+        <main class="content">
+
+            <!-- Тема, мета -->
+            <section id="topic" class="block">
+                <h2>Лабораторна робота №3</h2>
+
+                <h3>Тема</h3>
+                <p>Верстка HTML-документу. Блокова верстка. Верстка засобами CSS та Flexbox. Адаптивна верстка. Медіа-запити. Метатег viewport.</p>
+
+                <h3>Мета</h3>
+                <ul>
+                    <li>Придбати практичні навички верстки сторінок засобами CSS, верстки на основі плаваючих елементів, з'ясувати переваги та недоліки типів макетів веб-сторінок.</li>
+                    <li>Придбати практичні навички верстки сторінок засобами CSS та Flexbox.</li>
+                </ul>
+
+                <h3>Місце розташування</h3>
+                <table class="links-table">
+                    <tr>
+                        <th rowspan="2">Власний сайт MODHUB</th>
+                        <td>Репозиторій</td>
+                        <td><a href="https://github.com/Oleg-StackOverflow/IA-44_appWEB-ZakharovOleh-FIOT-2026" target="_blank">github.com/Oleg-StackOverflow/IA-44_appWEB-ZakharovOleh-FIOT-2026</a></td>
+                    </tr>
+                    <tr>
+                        <td>Жива сторінка</td>
+                        <td><a href="https://Oleg-StackOverflow.github.io/IA-44_appWEB-ZakharovOleh-FIOT-2026/" target="_blank">Oleg-StackOverflow.github.io/IA-44_appWEB-ZakharovOleh-FIOT-2026</a></td>
+                    </tr>
+                    <tr>
+                        <th rowspan="2">Звітний HTML-документ</th>
+                        <td>Репозиторій</td>
+                        <td><a href="https://github.com/Oleg-StackOverflow/IA-44_appRECORD-ZakharovOleh-FIOT-2026" target="_blank">github.com/Oleg-StackOverflow/IA-44_appRECORD-ZakharovOleh-FIOT-2026</a></td>
+                    </tr>
+                    <tr>
+                        <td>Жива сторінка</td>
+                        <td><a href="https://Oleg-StackOverflow.github.io/IA-44_appRECORD-ZakharovOleh-FIOT-2026/" target="_blank">Oleg-StackOverflow.github.io/IA-44_appRECORD-ZakharovOleh-FIOT-2026</a></td>
+                    </tr>
+                </table>
+            </section>
+
+            <!-- Завдання 1 -->
+            <section id="task1" class="block">
+                <h2>Завдання №1. Макет власного сайту</h2>
+
+                <h3>Тип макету</h3>
+                <p>Сайт MODHUB має <b>адаптивний</b> макет. Основа гумова: контейнер займає всю ширину екрана, але не більше 71,25rem (1140px), а колонки задані через Grid і Flexbox у частках (<code>1fr</code>) та відсотках. Поверх цього медіазапити перебудовують сітку для трьох груп пристроїв: десктопа, планшета й смартфона. Розміри шрифтів і відступів задані у відносних одиницях <code>rem</code>, тому інтерфейс масштабується разом з налаштуванням розміру шрифту в браузері.</p>
+
+                <h3>Що вдосконалено в макеті</h3>
+                <ul>
+                    <li>Навігація в шапці розширена до кількох пунктів і на смартфоні згортається в бургер-меню.</li>
+                    <li>Додано блок інформаційних карток «Категорії модів» з адаптивною сіткою 4 → 2 → 1 колонка.</li>
+                    <li>Таблиця популярних модів на смартфоні перебудовується: кожен рядок стає карткою.</li>
+                    <li>Шапка закріплена вгорі сторінки під час прокручування.</li>
+                    <li>Додано анімації: поява блоків при прокручуванні, плавне відкриття меню, ефекти наведення.</li>
+                </ul>
+
+                <h3>Семантичні компоненти</h3>
+                <table class="theory-table">
+                    <thead>
+                        <tr><th>Компонент</th><th>Тег</th><th>Вміст</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Шапка</td><td><code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code></td><td>Логотип, навігаційне меню, кнопки «Увійти» та «Додати мод», кнопка бургер-меню</td></tr>
+                        <tr><td>Основний блок</td><td><code>&lt;main&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;article&gt;</code></td><td>Пошук, таблиця популярних модів, інформаційні картки категорій, інструкція, форма зворотного зв'язку</td></tr>
+                        <tr><td>Нижній колонтитул</td><td><code>&lt;footer&gt;</code></td><td>Копірайт, посилання на правила та GitHub</td></tr>
+                    </tbody>
+                </table>
+
+                <h3>Файлова структура</h3>
+<pre><code>IA-44_appWEB-ZakharovOleh-FIOT-2026/
+├── index.html            — головна сторінка
+├── pages/
+│   └── about.html        — про проєкт і бізнес-логіку
+├── css/
+│   └── style.css         — усі стилі сайту
+├── js/
+│   └── main.js           — бургер-меню, поява блоків
+└── images/
+    ├── favicon.svg
+    ├── zone-reborn.jpg
+    ├── night-city.jpg
+    ├── nordic-horizons.jpg
+    └── vanilla-adventures.jpg</code></pre>
+            </section>
+
+            <section id="task1-view" class="block">
+                <h2>Зовнішній вигляд сайту</h2>
+                <p><a href="https://USERNAME.github.io/IS-4X_appWEB-PrizvyshcheImia-FIOT-2026/" target="_blank" class="open-link">Відкрити живу сторінку</a></p>
+                <figure>
+                    <img src="images/lab3/site-desktop.png" alt="Головна сторінка MODHUB на десктопі" class="screenshot">
+                    <figcaption>Рис. 1 — Головна сторінка, десктопна версія (1280 px)</figcaption>
+                </figure>
+                <div class="screens">
+                    <figure>
+                        <img src="images/lab3/site-tablet.png" alt="Головна сторінка на планшеті" class="screenshot">
+                        <figcaption>Рис. 2 — Планшетна версія (820 px)</figcaption>
+                    </figure>
+                    <figure class="screen-narrow">
+                        <img src="images/lab3/site-mobile.png" alt="Головна сторінка на смартфоні" class="screenshot">
+                        <figcaption>Рис. 3 — Мобільна версія (390 px)</figcaption>
+                    </figure>
+                    <figure class="screen-narrow">
+                        <img src="images/lab3/site-menu.png" alt="Відкрите бургер-меню" class="screenshot">
+                        <figcaption>Рис. 4 — Відкрите бургер-меню</figcaption>
+                    </figure>
+                </div>
+            </section>
+
+            <section id="task1-html" class="block">
+                <h2>HTML-код головної сторінки</h2>
+                <p>Файл <code>index.html</code>:</p>
+<pre class="code-long"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="uk"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;MODHUB — каталог модів&lt;/title&gt;
+    &lt;link rel="preconnect" href="https://fonts.googleapis.com"&gt;
+    &lt;link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"&gt;
+    &lt;link rel="icon" href="images/favicon.svg" type="image/svg+xml"&gt;
+    &lt;link rel="stylesheet" href="css/style.css"&gt;
+    &lt;script&gt;document.documentElement.classList.add('js');&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+    &lt;!-- Шапка сайту --&gt;
+    &lt;header class="header"&gt;
+        &lt;div class="container header__inner"&gt;
+            &lt;a href="index.html" class="logo"&gt;
+                &lt;span class="logo__icon"&gt;M&lt;/span&gt;
+                &lt;span class="logo__text"&gt;MODHUB&lt;/span&gt;
+            &lt;/a&gt;
+
+            &lt;button class="burger" type="button" aria-label="Відкрити меню" aria-expanded="false" aria-controls="menu"&gt;
+                &lt;span class="burger__line"&gt;&lt;/span&gt;
+                &lt;span class="burger__line"&gt;&lt;/span&gt;
+                &lt;span class="burger__line"&gt;&lt;/span&gt;
+            &lt;/button&gt;
+
+            &lt;nav class="nav" id="menu"&gt;
+                &lt;ul class="nav__list"&gt;
+                    &lt;li&gt;&lt;a href="#popular" class="nav__link"&gt;Популярні&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="#categories" class="nav__link"&gt;Категорії&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="#howto" class="nav__link"&gt;Як користуватися&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="pages/about.html" class="nav__link link-accent"&gt;Про проєкт і бізнес-логіку&lt;/a&gt;&lt;/li&gt;
+                &lt;/ul&gt;
+
+                &lt;div class="header__actions"&gt;
+                    &lt;a href="#" class="header__login"&gt;Увійти&lt;/a&gt;
+                    &lt;a href="#" class="btn-outline"&gt;Додати мод &lt;span class="arrow-down"&gt;&amp;#9662;&lt;/span&gt;&lt;/a&gt;
+                &lt;/div&gt;
+            &lt;/nav&gt;
+        &lt;/div&gt;
+    &lt;/header&gt;
+
+    &lt;main class="container"&gt;
+
+        &lt;!-- Пошук --&gt;
+        &lt;section class="catalog reveal"&gt;
+            &lt;h1&gt;Каталог модів&lt;/h1&gt;
+
+            &lt;form class="search" action="#" method="get"&gt;
+                &lt;svg class="search__icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"&gt;
+                    &lt;circle cx="11" cy="11" r="7"&gt;&lt;/circle&gt;
+                    &lt;line x1="16.5" y1="16.5" x2="21" y2="21"&gt;&lt;/line&gt;
+                &lt;/svg&gt;
+                &lt;input type="text" name="q" placeholder="Пошук модів та ігор" class="search__input"&gt;
+                &lt;button type="submit" class="btn-accent"&gt;
+                    Знайти моди
+                    &lt;svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"&gt;
+                        &lt;circle cx="11" cy="11" r="7"&gt;&lt;/circle&gt;
+                        &lt;line x1="16.5" y1="16.5" x2="21" y2="21"&gt;&lt;/line&gt;
+                    &lt;/svg&gt;
+                &lt;/button&gt;
+            &lt;/form&gt;
+
+            &lt;ul class="games"&gt;
+                &lt;li&gt;&lt;a href="#"&gt;S.T.A.L.K.E.R. 2&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;Cyberpunk 2077&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;Skyrim SE&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;Minecraft&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;GTA V&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;The Witcher 3&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/section&gt;
+
+        &lt;!-- Таблиця популярних модів --&gt;
+        &lt;section id="popular" class="reveal"&gt;
+            &lt;h2&gt;Популярні моди&lt;/h2&gt;
+
+            &lt;table class="mods-table"&gt;
+                &lt;thead&gt;
+                    &lt;tr&gt;
+                        &lt;th&gt;Мод&lt;/th&gt;
+                        &lt;th class="col-num"&gt;Оцінка&lt;/th&gt;
+                        &lt;th class="col-num"&gt;Завантаження&lt;/th&gt;
+                    &lt;/tr&gt;
+                &lt;/thead&gt;
+                &lt;tbody&gt;
+                    &lt;tr&gt;
+                        &lt;td&gt;
+                            &lt;div class="mod"&gt;
+                                &lt;img src="images/zone-reborn.jpg" alt="Скриншот моду Zone Reborn" width="110" height="70"&gt;
+                                &lt;div&gt;
+                                    &lt;p class="mod__meta"&gt;S.T.A.L.K.E.R. 2 / Графіка&lt;/p&gt;
+                                    &lt;h3 class="mod__name"&gt;Zone Reborn&lt;/h3&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/td&gt;
+                        &lt;td class="col-num"&gt;&lt;span class="star"&gt;&amp;#9734;&lt;/span&gt; 4.9&lt;/td&gt;
+                        &lt;td class="col-num muted"&gt;&amp;#10515; 25,4 тис.&lt;/td&gt;
+                    &lt;/tr&gt;
+                    &lt;tr&gt;
+                        &lt;td&gt;
+                            &lt;div class="mod"&gt;
+                                &lt;img src="images/night-city.jpg" alt="Скриншот моду Night City Rewired" width="110" height="70"&gt;
+                                &lt;div&gt;
+                                    &lt;p class="mod__meta"&gt;Cyberpunk 2077 / Геймплей&lt;/p&gt;
+                                    &lt;h3 class="mod__name"&gt;Night City Rewired&lt;/h3&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/td&gt;
+                        &lt;td class="col-num"&gt;&lt;span class="star"&gt;&amp;#9734;&lt;/span&gt; 4.8&lt;/td&gt;
+                        &lt;td class="col-num muted"&gt;&amp;#10515; 42,1 тис.&lt;/td&gt;
+                    &lt;/tr&gt;
+                    &lt;tr&gt;
+                        &lt;td&gt;
+                            &lt;div class="mod"&gt;
+                                &lt;img src="images/nordic-horizons.jpg" alt="Скриншот моду Nordic Horizons" width="110" height="70"&gt;
+                                &lt;div&gt;
+                                    &lt;p class="mod__meta"&gt;Skyrim SE / Графіка&lt;/p&gt;
+                                    &lt;h3 class="mod__name"&gt;Nordic Horizons&lt;/h3&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/td&gt;
+                        &lt;td class="col-num"&gt;&lt;span class="star"&gt;&amp;#9734;&lt;/span&gt; 4.9&lt;/td&gt;
+                        &lt;td class="col-num muted"&gt;&amp;#10515; 85,6 тис.&lt;/td&gt;
+                    &lt;/tr&gt;
+                    &lt;tr&gt;
+                        &lt;td&gt;
+                            &lt;div class="mod"&gt;
+                                &lt;img src="images/vanilla-adventures.jpg" alt="Скриншот моду Vanilla+ Adventures" width="110" height="70"&gt;
+                                &lt;div&gt;
+                                    &lt;p class="mod__meta"&gt;Minecraft / Нові світи&lt;/p&gt;
+                                    &lt;h3 class="mod__name"&gt;Vanilla+ Adventures&lt;/h3&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/td&gt;
+                        &lt;td class="col-num"&gt;&lt;span class="star"&gt;&amp;#9734;&lt;/span&gt; 4.7&lt;/td&gt;
+                        &lt;td class="col-num muted"&gt;&amp;#10515; 31,2 тис.&lt;/td&gt;
+                    &lt;/tr&gt;
+                &lt;/tbody&gt;
+            &lt;/table&gt;
+        &lt;/section&gt;
+
+        &lt;!-- Інформаційні картки --&gt;
+        &lt;section id="categories" class="reveal"&gt;
+            &lt;h2&gt;Категорії модів&lt;/h2&gt;
+
+            &lt;div class="cards"&gt;
+                &lt;article class="card"&gt;
+                    &lt;span class="card__icon"&gt;&amp;#9728;&lt;/span&gt;
+                    &lt;h3 class="card__title"&gt;Графіка&lt;/h3&gt;
+                    &lt;p class="card__text"&gt;Текстури високої якості, освітлення, погода та пресети кольору.&lt;/p&gt;
+                    &lt;span class="card__count"&gt;1 240 модів&lt;/span&gt;
+                &lt;/article&gt;
+                &lt;article class="card"&gt;
+                    &lt;span class="card__icon"&gt;&amp;#9881;&lt;/span&gt;
+                    &lt;h3 class="card__title"&gt;Геймплей&lt;/h3&gt;
+                    &lt;p class="card__text"&gt;Нові механіки, баланс зброї, штучний інтелект ворогів і економіка.&lt;/p&gt;
+                    &lt;span class="card__count"&gt;860 модів&lt;/span&gt;
+                &lt;/article&gt;
+                &lt;article class="card"&gt;
+                    &lt;span class="card__icon"&gt;&amp;#9873;&lt;/span&gt;
+                    &lt;h3 class="card__title"&gt;Нові світи&lt;/h3&gt;
+                    &lt;p class="card__text"&gt;Додаткові локації, квести та сюжетні лінії від спільноти.&lt;/p&gt;
+                    &lt;span class="card__count"&gt;410 модів&lt;/span&gt;
+                &lt;/article&gt;
+                &lt;article class="card"&gt;
+                    &lt;span class="card__icon"&gt;&amp;#9638;&lt;/span&gt;
+                    &lt;h3 class="card__title"&gt;Інтерфейс&lt;/h3&gt;
+                    &lt;p class="card__text"&gt;Зручніший інвентар, карта, мінімалістичний HUD і нові шрифти.&lt;/p&gt;
+                    &lt;span class="card__count"&gt;295 модів&lt;/span&gt;
+                &lt;/article&gt;
+            &lt;/div&gt;
+        &lt;/section&gt;
+
+        &lt;div class="bottom reveal"&gt;
+            &lt;!-- Інструкція (списки) --&gt;
+            &lt;section class="howto" id="howto"&gt;
+                &lt;h2&gt;Як користуватися&lt;/h2&gt;
+
+                &lt;h3&gt;Встановлення мода&lt;/h3&gt;
+                &lt;ol&gt;
+                    &lt;li&gt;Оберіть гру та знайдіть потрібний мод.&lt;/li&gt;
+                    &lt;li&gt;Перевірте версію гри й вимоги мода.&lt;/li&gt;
+                    &lt;li&gt;Завантажте мод і дотримуйтеся інструкції автора.&lt;/li&gt;
+                &lt;/ol&gt;
+
+                &lt;h3&gt;Перед запуском&lt;/h3&gt;
+                &lt;ul&gt;
+                    &lt;li&gt;Зробіть резервну копію збережень.&lt;/li&gt;
+                    &lt;li&gt;Перевірте сумісність з іншими модами:
+                        &lt;ul&gt;
+                            &lt;li&gt;порядок завантаження модів;&lt;/li&gt;
+                            &lt;li&gt;чи не змінюють моди одні й ті самі файли.&lt;/li&gt;
+                        &lt;/ul&gt;
+                    &lt;/li&gt;
+                    &lt;li&gt;Використовуйте відповідну версію гри.&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/section&gt;
+
+            &lt;!-- Форма зворотного зв'язку --&gt;
+            &lt;section id="feedback"&gt;
+                &lt;h2&gt;Зворотний зв'язок&lt;/h2&gt;
+
+                &lt;form action="#" method="post" class="feedback__form"&gt;
+                    &lt;div class="form-row"&gt;
+                        &lt;div class="form-group"&gt;
+                            &lt;label for="name"&gt;Ім'я&lt;/label&gt;
+                            &lt;input type="text" id="name" name="name" placeholder="Ваше ім'я" required&gt;
+                        &lt;/div&gt;
+                        &lt;div class="form-group"&gt;
+                            &lt;label for="email"&gt;Електронна пошта&lt;/label&gt;
+                            &lt;input type="email" id="email" name="email" placeholder="name@example.com" required&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+
+                    &lt;div class="form-group"&gt;
+                        &lt;label for="message"&gt;Повідомлення&lt;/label&gt;
+                        &lt;textarea id="message" name="message" rows="4" placeholder="Напишіть ваше запитання..."&gt;&lt;/textarea&gt;
+                    &lt;/div&gt;
+
+                    &lt;button type="submit" class="btn-accent"&gt;Надіслати повідомлення&lt;/button&gt;
+                &lt;/form&gt;
+            &lt;/section&gt;
+        &lt;/div&gt;
+
+    &lt;/main&gt;
+
+    &lt;footer class="footer"&gt;
+        &lt;div class="container footer__inner"&gt;
+            &lt;p&gt;&amp;copy; 2026 MODHUB. Створено гравцями для гравців.&lt;/p&gt;
+            &lt;div class="footer__links"&gt;
+                &lt;a href="#"&gt;Конфіденційність&lt;/a&gt;
+                &lt;a href="#"&gt;Умови використання&lt;/a&gt;
+                &lt;a href="https://github.com/" target="_blank"&gt;GitHub&lt;/a&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/footer&gt;
+
+    &lt;script src="js/main.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                <p>Файл <code>js/main.js</code> — відкриття бургер-меню та поява блоків при прокручуванні:</p>
+<pre><code>// ===== Бургер-меню =====
+const burger = document.querySelector('.burger');
+const nav = document.querySelector('.nav');
+
+function closeMenu() {
+    nav.classList.remove('nav--open');
+    burger.setAttribute('aria-expanded', 'false');
+    burger.setAttribute('aria-label', 'Відкрити меню');
+}
+
+burger.addEventListener('click', function () {
+    const isOpen = nav.classList.toggle('nav--open');
+    burger.setAttribute('aria-expanded', isOpen);
+    burger.setAttribute('aria-label', isOpen ? 'Закрити меню' : 'Відкрити меню');
+});
+
+// закриваємо меню після вибору пункту
+nav.querySelectorAll('a').forEach(function (link) {
+    link.addEventListener('click', closeMenu);
+});
+
+// закриваємо меню, якщо екран став широким
+window.addEventListener('resize', function () {
+    if (window.innerWidth &gt;= 768) {
+        closeMenu();
+    }
+});
+
+// ===== Поява блоків при прокручуванні =====
+const blocks = document.querySelectorAll('.reveal');
+
+const observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.1 });
+
+blocks.forEach(function (block) {
+    observer.observe(block);
+});</code></pre>
+            </section>
+
+            <section id="task1-css" class="block">
+                <h2>CSS-код головної сторінки</h2>
+                <p>Файл <code>css/style.css</code>:</p>
+<pre class="code-long"><code>/* =========================================================
+   MODHUB — стилі
+   Брейкпоінти:
+   десктоп  — від 1024px
+   планшет  — 768px … 1023px
+   смартфон — до 767px
+   ========================================================= */
+
+/* ===== Змінні ===== */
+:root {
+    --bg: #131416;
+    --bg-dark: #0f1012;
+    --surface: #1b1d20;
+    --surface-hover: #24272b;
+    --border: #25272b;
+    --border-input: #2a2c31;
+    --text: #e8e9eb;
+    --text-soft: #c4c7cc;
+    --text-muted: #8b8f96;
+    --accent: #c5f048;
+    --accent-hover: #d4f76e;
+    --radius: 0.25rem;
+    --header-height: 3.875rem;
+    --gap: 1.5rem;
+}
+
+/* ===== Універсальний селектор ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: var(--header-height);
+}
+
+/* ===== Селектори тегів ===== */
+body {
+    font-family: 'Inter', Arial, sans-serif;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    background-color: var(--bg);
+    color: var(--text);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+h1 {
+    font-size: clamp(1.5rem, 1.2rem + 1.2vw, 1.75rem);
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    margin: 2rem 0 1.25rem;
+}
+
+h2 {
+    font-size: 1.375rem;
+    font-weight: 400;
+    margin-bottom: 1.125rem;
+}
+
+h3 {
+    font-size: 0.9375rem;
+    font-weight: 600;
+}
+
+/* контур для навігації з клавіатури */
+a:focus-visible,
+button:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+}
+
+/* ===== Загальні класи ===== */
+.container {
+    width: 100%;
+    max-width: 71.25rem;
+    margin: 0 auto;
+    padding: 0 2.5rem;
+}
+
+.muted {
+    color: var(--text-muted);
+}
+
+.link-accent {
+    color: var(--accent);
+    font-size: 0.8125rem;
+}
+
+.link-accent:hover {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+/* ===== Кнопки ===== */
+.btn-accent {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: var(--accent);
+    color: var(--bg);
+    border: none;
+    border-radius: var(--radius);
+    padding: 0.625rem 1rem;
+    font-family: inherit;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: background-color 0.2s, box-shadow 0.2s, transform 0.1s;
+}
+
+.btn-accent:hover {
+    background-color: var(--accent-hover);
+    box-shadow: 0 0 0 4px rgba(197, 240, 72, 0.15);
+}
+
+.btn-accent:active {
+    transform: scale(0.97);
+}
+
+.btn-outline {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.625rem;
+    border: 1px solid var(--accent);
+    border-radius: var(--radius);
+    padding: 0.375rem 0.75rem;
+    font-size: 0.8125rem;
+    transition: background-color 0.2s;
+}
+
+.btn-outline:hover {
+    background-color: rgba(197, 240, 72, 0.1);
+}
+
+.arrow-down {
+    font-size: 0.625rem;
+    color: var(--text-muted);
+}
+
+/* ===== Шапка ===== */
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    border-bottom: 1px solid var(--border);
+    background: linear-gradient(180deg, #17191c 0%, var(--bg) 100%);
+}
+
+.header__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: var(--header-height);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-shrink: 0;
+}
+
+.logo__icon {
+    width: 1.625rem;
+    height: 1.625rem;
+    background-color: var(--accent);
+    color: var(--bg);
+    border-radius: var(--radius);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+.logo__text {
+    font-size: 1.125rem;
+    font-weight: 500;
+}
+
+/* навігація: на десктопі — в один рядок */
+.nav {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 3rem;
+}
+
+.nav__list {
+    list-style: none;
+    display: flex;
+    gap: 1.75rem;
+}
+
+.nav__link {
+    font-size: 0.8125rem;
+    position: relative;
+}
+
+/* підкреслення, що «виростає» при наведенні */
+.nav__link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -0.25rem;
+    width: 100%;
+    height: 1px;
+    background-color: currentColor;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.25s;
+}
+
+.nav__link:hover::after {
+    transform: scaleX(1);
+}
+
+.nav__link.link-accent:hover {
+    text-decoration: none;
+}
+
+.header__actions {
+    display: flex;
+    align-items: center;
+    gap: 1.125rem;
+    font-size: 0.8125rem;
+}
+
+/* дочірній селектор */
+.header__actions &gt; a:first-child:hover {
+    color: var(--accent);
+}
+
+/* кнопка бургер-меню, на десктопі схована */
+.burger {
+    display: none;
+    width: 2.5rem;
+    height: 2.5rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: relative;
+}
+
+.burger__line {
+    position: absolute;
+    left: 0.5rem;
+    width: 1.5rem;
+    height: 2px;
+    background-color: var(--text);
+    border-radius: 1px;
+    transition: transform 0.3s, opacity 0.2s;
+}
+
+.burger__line:nth-child(1) { top: 0.8125rem; }
+.burger__line:nth-child(2) { top: 1.1875rem; }
+.burger__line:nth-child(3) { top: 1.5625rem; }
+
+/* бургер перетворюється на хрестик */
+.burger[aria-expanded="true"] .burger__line:nth-child(1) {
+    transform: translateY(0.375rem) rotate(45deg);
+}
+
+.burger[aria-expanded="true"] .burger__line:nth-child(2) {
+    opacity: 0;
+}
+
+.burger[aria-expanded="true"] .burger__line:nth-child(3) {
+    transform: translateY(-0.375rem) rotate(-45deg);
+}
+
+/* ===== Пошук ===== */
+.search {
+    display: flex;
+    align-items: center;
+    background-color: var(--surface);
+    border: 1px solid var(--border-input);
+    border-radius: var(--radius);
+    padding: 0.25rem 0.25rem 0.25rem 0.875rem;
+    transition: border-color 0.2s;
+}
+
+.search:focus-within {
+    border-color: var(--accent);
+}
+
+.search__icon {
+    color: var(--text-muted);
+    flex-shrink: 0;
+}
+
+.search__input {
+    flex: 1;
+    min-width: 0;
+    background: none;
+    border: none;
+    outline: none;
+    color: var(--text);
+    font-family: inherit;
+    font-size: 0.875rem;
+    padding: 0.5rem 0.625rem;
+}
+
+.search__input::placeholder {
+    color: var(--text-muted);
+}
+
+.games {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 0.625rem;
+    margin-top: 0.75rem;
+}
+
+/* дочірній селектор */
+.games &gt; li &gt; a {
+    display: block;
+    background-color: var(--surface);
+    padding: 0.5625rem 0.75rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    border-radius: 2px;
+    border-left: 2px solid transparent;
+    transition: background-color 0.2s, border-color 0.2s;
+}
+
+.games &gt; li &gt; a:hover {
+    background-color: var(--surface-hover);
+    border-left-color: var(--accent);
+}
+
+/* ===== Таблиця модів (селектор ідентифікатора) ===== */
+#popular {
+    margin-top: 2.75rem;
+}
+
+.mods-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.mods-table th {
+    font-size: 0.6875rem;
+    font-weight: 400;
+    color: var(--text-muted);
+    text-align: left;
+    padding-bottom: 0.625rem;
+    border-bottom: 1px solid var(--border);
+}
+
+.mods-table td {
+    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 0.75rem;
+}
+
+.mods-table .col-num {
+    text-align: right;
+    width: 7rem;
+}
+
+.mods-table td.col-num {
+    padding-right: 0.75rem;
+}
+
+.mods-table tbody tr {
+    transition: background-color 0.2s;
+}
+
+.mods-table tbody tr:hover {
+    background-color: var(--surface);
+}
+
+.star {
+    color: var(--accent);
+}
+
+.mod {
+    display: flex;
+    align-items: center;
+    gap: 1.125rem;
+    padding-left: 0.5rem;
+}
+
+.mod img {
+    width: 6.875rem;
+    height: 4.375rem;
+    object-fit: cover;
+    border-radius: 3px;
+    transition: transform 0.3s;
+}
+
+.mods-table tbody tr:hover .mod img {
+    transform: scale(1.05);
+}
+
+.mod__meta {
+    font-size: 0.6875rem;
+    color: var(--text-muted);
+    margin-bottom: 0.25rem;
+}
+
+.mod__name {
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+/* ===== Інформаційні картки ===== */
+#categories {
+    margin-top: 2.75rem;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.25rem;
+    transition: transform 0.25s, border-color 0.25s;
+}
+
+.card:hover {
+    transform: translateY(-0.25rem);
+    border-color: var(--accent);
+}
+
+.card__icon {
+    font-size: 1.25rem;
+    color: var(--accent);
+    margin-bottom: 0.75rem;
+}
+
+.card__title {
+    margin-bottom: 0.375rem;
+}
+
+.card__text {
+    color: var(--text-soft);
+    font-size: 0.8125rem;
+    flex: 1;
+}
+
+.card__count {
+    margin-top: 1rem;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+}
+
+/* ===== Нижній блок ===== */
+.bottom {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+    margin: 2.75rem 0 3.125rem;
+}
+
+.howto h3 {
+    margin-top: 0.875rem;
+}
+
+/* сусідній селектор: список одразу після підзаголовка */
+.howto h3 + ol,
+.howto h3 + ul {
+    margin-top: 0.5rem;
+    font-size: 0.8125rem;
+    color: var(--text-soft);
+}
+
+/* нумерований список із власними лічильниками */
+.howto ol {
+    list-style: none;
+    counter-reset: step;
+}
+
+.howto ol &gt; li {
+    counter-increment: step;
+    position: relative;
+    padding-left: 1.75rem;
+    margin-bottom: 0.375rem;
+}
+
+.howto ol &gt; li::before {
+    content: counter(step);
+    position: absolute;
+    left: 0;
+    top: 1px;
+    width: 1.125rem;
+    height: 1.125rem;
+    border-radius: 50%;
+    background-color: var(--accent);
+    color: var(--bg);
+    font-size: 0.6875rem;
+    font-weight: 700;
+    text-align: center;
+    line-height: 1.125rem;
+}
+
+/* багаторівневий маркований список */
+.howto ul {
+    padding-left: 1.125rem;
+    list-style-type: square;
+}
+
+.howto ul li::marker {
+    color: var(--accent);
+}
+
+.howto ul ul {
+    margin-top: 0.25rem;
+    list-style-type: circle;
+    color: var(--text-muted);
+}
+
+.howto ul ul li::marker {
+    color: var(--text-muted);
+}
+
+/* ===== Форма (селектори ідентифікаторів) ===== */
+#feedback h2 {
+    margin-bottom: 1.125rem;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+}
+
+.form-group {
+    margin-bottom: 0.875rem;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.6875rem;
+    color: var(--text-soft);
+    margin-bottom: 0.375rem;
+}
+
+/* селектори атрибутів */
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group textarea {
+    width: 100%;
+    background-color: var(--surface);
+    border: 1px solid var(--border-input);
+    border-radius: 3px;
+    color: var(--text);
+    font-family: inherit;
+    font-size: 0.8125rem;
+    padding: 0.5625rem 0.625rem;
+    transition: border-color 0.2s;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--accent);
+}
+
+#message {
+    min-height: 6.25rem;
+    resize: vertical;
+}
+
+/* ===== Футер ===== */
+.footer {
+    background-color: var(--bg-dark);
+    border-top: 1px solid var(--border);
+    font-size: 0.6875rem;
+    color: var(--text-muted);
+}
+
+.footer__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
+}
+
+.footer__links {
+    display: flex;
+    gap: 1.375rem;
+}
+
+.footer__links a:hover {
+    color: var(--text);
+}
+
+/* селектор атрибута: зовнішні посилання отримують стрілку */
+a[href^="http"]::after {
+    content: " \2197";
+}
+
+/* ===== Сторінка "Про проєкт" ===== */
+.about {
+    padding-bottom: 3.75rem;
+}
+
+.about__lead {
+    color: var(--text-soft);
+    margin-bottom: 1.875rem;
+}
+
+.about section {
+    margin-bottom: 2.25rem;
+}
+
+.about p {
+    color: var(--text-soft);
+    max-width: 51.25rem;
+}
+
+.about h3 {
+    margin: 1.125rem 0 0.625rem;
+}
+
+.about ul,
+.about ol {
+    padding-left: 1.25rem;
+    color: var(--text-soft);
+}
+
+.about li {
+    margin-bottom: 0.25rem;
+}
+
+/* ===== Поява контенту при прокручуванні ===== */
+/* клас .js додає скрипт, тож без JavaScript усе видно одразу */
+.js .reveal {
+    opacity: 0;
+    transform: translateY(1.5rem);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.js .reveal.is-visible {
+    opacity: 1;
+    transform: none;
+}
+
+/* =========================================================
+   АДАПТИВНІСТЬ
+   ========================================================= */
+
+/* ----- Планшет: від 768px до 1023px (оператор and) ----- */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .container {
+        padding: 0 4vw;
+    }
+
+    .nav {
+        margin-left: 2rem;
+    }
+
+    .nav__list {
+        gap: 1.25rem;
+    }
+
+    /* «Про проєкт» на планшеті ховаємо з рядка, щоб усе вмістилось */
+    .nav__list li:last-child {
+        display: none;
+    }
+
+    .games {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .bottom {
+        gap: 2rem;
+    }
+}
+
+/* ----- Смартфон: до 767px ----- */
+@media (max-width: 767px) {
+    :root {
+        --header-height: 3.5rem;
+    }
+
+    .container {
+        padding: 0 5vw;
+    }
+
+    /* бургер-меню */
+    .burger {
+        display: block;
+    }
+
+    .nav {
+        position: absolute;
+        top: var(--header-height);
+        left: 0;
+        right: 0;
+        margin: 0;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 1.5rem;
+        padding: 1.5rem 5vw 2rem;
+        background-color: var(--bg);
+        border-bottom: 1px solid var(--border);
+        /* меню сховане: піднято вгору і прозоре */
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-1rem);
+        transition: opacity 0.3s, transform 0.3s, visibility 0.3s;
+    }
+
+    .nav--open {
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+    }
+
+    .nav__list {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .nav__link {
+        display: block;
+        padding: 0.875rem 0;
+        font-size: 1rem;
+        border-bottom: 1px solid var(--border);
+    }
+
+    .nav__link::after {
+        display: none;
+    }
+
+    .header__actions {
+        justify-content: space-between;
+        font-size: 0.9375rem;
+    }
+
+    .games {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .bottom {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+
+    /* таблиця: рядок перебудовується у картку */
+    .mods-table thead {
+        display: none;
+    }
+
+    .mods-table tr {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 0.25rem 1rem;
+        padding: 0.75rem 0;
+        border-bottom: 1px solid var(--border);
+    }
+
+    .mods-table td {
+        border: none;
+        padding: 0;
+    }
+
+    .mods-table td:first-child {
+        flex: 1 1 100%;
+    }
+
+    .mods-table .col-num,
+    .mods-table td.col-num {
+        width: auto;
+        text-align: left;
+        padding: 0 0 0 calc(5rem + 1.125rem + 0.5rem);
+    }
+
+    .mods-table td.col-num + td.col-num {
+        padding-left: 0;
+    }
+
+    .mod img {
+        width: 5rem;
+        height: 3.25rem;
+    }
+
+    .footer__inner {
+        flex-direction: column;
+        gap: 0.625rem;
+        text-align: center;
+    }
+}
+
+/* ----- Малі смартфони (оператор «або» — кома) ----- */
+@media (max-width: 400px), (max-width: 767px) and (orientation: portrait) and (max-height: 600px) {
+    .search .btn-accent {
+        padding: 0.625rem;
+        font-size: 0;
+        gap: 0;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ----- Смартфон, повернутий горизонтально ----- */
+@media (orientation: landscape) and (max-height: 500px) {
+    .header {
+        position: static;
+    }
+
+    .nav {
+        max-height: calc(100vh - var(--header-height));
+        overflow-y: auto;
+    }
+}
+
+/* ----- Пристрої без миші: ефект підйому карток вимикаємо (оператор not) ----- */
+@media not all and (hover: hover) {
+    .card:hover {
+        transform: none;
+    }
+}
+
+/* ----- Користувач просив менше анімацій ----- */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+    }
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    .js .reveal {
+        opacity: 1;
+        transform: none;
+    }
+}</code></pre>
+            </section>
+
+            <section id="task1-adaptive" class="block">
+                <h2>Адаптивна верстка</h2>
+
+                <h3>Метатег viewport</h3>
+                <p>Без цього метатегу мобільний браузер показує сторінку як на екрані шириною близько 980px і зменшує її. З ним ширина сторінки дорівнює ширині пристрою, і медіазапити спрацьовують правильно.</p>
+<pre><code>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</code></pre>
+
+                <h3>Брейкпоінти</h3>
+                <table class="theory-table">
+                    <thead>
+                        <tr><th>Версія</th><th>Ширина екрана</th><th>Що змінюється</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Десктопна</td><td>від 1024px</td><td>Базові стилі без медіазапиту: меню в рядок, 6 кнопок ігор, 4 картки, форма та інструкція у дві колонки</td></tr>
+                        <tr><td>Планшетна</td><td>768px – 1023px</td><td>Відступи контейнера у <code>vw</code>, пункт «Про проєкт» ховається з меню, 3 кнопки ігор у рядку, 2 картки в рядку</td></tr>
+                        <tr><td>Мобільна</td><td>до 767px</td><td>Бургер-меню, 2 кнопки ігор у рядку, картки, інструкція й форма в одну колонку, рядки таблиці стають картками</td></tr>
+                    </tbody>
+                </table>
+
+                <h3>Десктопна версія</h3>
+                <p>Десктопна версія — це основні стилі файлу, написані без медіазапитів. Шапка — Flexbox з трьома частинами: логотип, меню та кнопки. Кнопки ігор, картки категорій і нижній блок розміщені через CSS Grid: <code>repeat(6, 1fr)</code>, <code>repeat(4, 1fr)</code> та <code>1fr 1fr</code>. Ширина контейнера обмежена <code>max-width: 71.25rem</code>, тому на великих моніторах рядки не розтягуються занадто сильно.</p>
+
+                <h3>Планшетна версія</h3>
+                <p>Для планшета використано медіазапит із логічним оператором <code>and</code>, який задає діапазон ширин. Сітки отримують менше колонок, а бічні відступи задано у <code>vw</code>, щоб вони пропорційно змінювались разом з екраном.</p>
+<pre><code>/* ----- Планшет: від 768px до 1023px (оператор and) ----- */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .container {
+        padding: 0 4vw;
+    }
+
+    .nav {
+        margin-left: 2rem;
+    }
+
+    .nav__list {
+        gap: 1.25rem;
+    }
+
+    /* «Про проєкт» на планшеті ховаємо з рядка, щоб усе вмістилось */
+    .nav__list li:last-child {
+        display: none;
+    }
+
+    .games {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .bottom {
+        gap: 2rem;
+    }
+}</code></pre>
+
+                <h3>Мобільна версія</h3>
+                <p>На смартфоні навігація перетворюється на бургер-меню. Кнопка <code>.burger</code> стає видимою, а блок <code>.nav</code> позиціонується абсолютно під шапкою і схований через <code>opacity</code>, <code>visibility</code> і <code>transform</code>. Скрипт при натисканні додає клас <code>.nav--open</code>, і меню плавно з'являється. Три лінії бургера перетворюються на хрестик через <code>transform: rotate()</code>. Таблиця модів ховає заголовки, а кожен рядок <code>tr</code> стає flex-контейнером з переносом.</p>
+<pre class="code-long"><code>/* ----- Смартфон: до 767px ----- */
+@media (max-width: 767px) {
+    :root {
+        --header-height: 3.5rem;
+    }
+
+    .container {
+        padding: 0 5vw;
+    }
+
+    /* бургер-меню */
+    .burger {
+        display: block;
+    }
+
+    .nav {
+        position: absolute;
+        top: var(--header-height);
+        left: 0;
+        right: 0;
+        margin: 0;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 1.5rem;
+        padding: 1.5rem 5vw 2rem;
+        background-color: var(--bg);
+        border-bottom: 1px solid var(--border);
+        /* меню сховане: піднято вгору і прозоре */
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-1rem);
+        transition: opacity 0.3s, transform 0.3s, visibility 0.3s;
+    }
+
+    .nav--open {
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+    }
+
+    .nav__list {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .nav__link {
+        display: block;
+        padding: 0.875rem 0;
+        font-size: 1rem;
+        border-bottom: 1px solid var(--border);
+    }
+
+    .nav__link::after {
+        display: none;
+    }
+
+    .header__actions {
+        justify-content: space-between;
+        font-size: 0.9375rem;
+    }
+
+    .games {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .bottom {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+
+    /* таблиця: рядок перебудовується у картку */
+    .mods-table thead {
+        display: none;
+    }
+
+    .mods-table tr {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 0.25rem 1rem;
+        padding: 0.75rem 0;
+        border-bottom: 1px solid var(--border);
+    }
+
+    .mods-table td {
+        border: none;
+        padding: 0;
+    }
+
+    .mods-table td:first-child {
+        flex: 1 1 100%;
+    }
+
+    .mods-table .col-num,
+    .mods-table td.col-num {
+        width: auto;
+        text-align: left;
+        padding: 0 0 0 calc(5rem + 1.125rem + 0.5rem);
+    }
+
+    .mods-table td.col-num + td.col-num {
+        padding-left: 0;
+    }
+
+    .mod img {
+        width: 5rem;
+        height: 3.25rem;
+    }
+
+    .footer__inner {
+        flex-direction: column;
+        gap: 0.625rem;
+        text-align: center;
+    }
+}</code></pre>
+
+                <h3>Логічні оператори в медіазапитах</h3>
+                <table class="theory-table">
+                    <thead>
+                        <tr><th>Оператор</th><th>Значення</th><th>Де використано</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><code>and</code></td><td>Усі умови мають виконуватися одночасно</td><td>Планшет: <code>(min-width: 768px) and (max-width: 1023px)</code></td></tr>
+                        <tr><td><code>,</code> (кома)</td><td>«Або»: достатньо однієї умови</td><td>Малі смартфони: вузький екран <i>або</i> низький екран у портретній орієнтації</td></tr>
+                        <tr><td><code>not</code></td><td>Заперечення всього запиту</td><td>Пристрої без миші: вимкнено підйом карток при «наведенні»</td></tr>
+                        <tr><td><code>only</code></td><td>Застосувати лише для вказаного типу носія</td><td>Звітний документ: стилі для друку <code>@media only print</code></td></tr>
+                    </tbody>
+                </table>
+<pre><code>/* ----- Малі смартфони (оператор «або» — кома) ----- */
+@media (max-width: 400px), (max-width: 767px) and (orientation: portrait) and (max-height: 600px) {
+    .search .btn-accent {
+        padding: 0.625rem;
+        font-size: 0;
+        gap: 0;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ----- Смартфон, повернутий горизонтально ----- */
+@media (orientation: landscape) and (max-height: 500px) {
+    .header {
+        position: static;
+    }
+
+    .nav {
+        max-height: calc(100vh - var(--header-height));
+        overflow-y: auto;
+    }
+}
+
+/* ----- Пристрої без миші: ефект підйому карток вимикаємо (оператор not) ----- */
+@media not all and (hover: hover) {
+    .card:hover {
+        transform: none;
+    }
+}</code></pre>
+
+                <h3>Відносні одиниці</h3>
+                <ul>
+                    <li><code>rem</code> — розміри шрифтів, відступи, ширина зображень і кнопок (1rem = 16px за замовчуванням).</li>
+                    <li><code>%</code> — ширина контейнера (<code>width: 100%</code>) та зображень (<code>max-width: 100%</code>).</li>
+                    <li><code>vw</code> — бічні відступи контейнера на планшеті й смартфоні, розмір заголовка через <code>clamp(1.5rem, 1.2rem + 1.2vw, 1.75rem)</code>.</li>
+                    <li><code>vh</code> — мінімальна висота сторінки <code>min-height: 100vh</code>, щоб футер завжди був унизу, та висота меню в горизонтальній орієнтації.</li>
+                    <li><code>em</code> — відступ маркера в переліку переваг на сторінці Flexbox (<code>margin-top: 0.45em</code>).</li>
+                </ul>
+
+                <h3>Анімації та візуальні ефекти</h3>
+<pre><code>/* підкреслення, що «виростає» при наведенні */
+.nav__link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -0.25rem;
+    width: 100%;
+    height: 1px;
+    background-color: currentColor;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.25s;
+}
+
+.nav__link:hover::after {
+    transform: scaleX(1);
+}
+
+.card:hover {
+    transform: translateY(-0.25rem);
+    border-color: var(--accent);
+}
+
+/* бургер перетворюється на хрестик */
+.burger[aria-expanded="true"] .burger__line:nth-child(1) {
+    transform: translateY(0.375rem) rotate(45deg);
+}
+
+/* клас .js додає скрипт, тож без JavaScript усе видно одразу */
+.js .reveal {
+    opacity: 0;
+    transform: translateY(1.5rem);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.js .reveal.is-visible {
+    opacity: 1;
+    transform: none;
+}
+
+/* ----- Користувач просив менше анімацій ----- */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+    }
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    .js .reveal {
+        opacity: 1;
+        transform: none;
+    }
+}</code></pre>
+
+                <h3>Медіазапити звітного HTML-документа</h3>
+                <p>Звітний документ теж адаптивний. На планшеті меню лабораторної стає сіткою з двох колонок над вмістом. На смартфоні кнопки лабораторних робіт стають однією стрічкою з горизонтальною прокруткою, а пункти меню переносяться в кілька рядків. Для друку меню ховаються.</p>
+<pre class="code-long"><code>/* =========================================================
+   Адаптивність звіту
+   десктоп  — від 1001px
+   планшет  — 601px … 1000px
+   смартфон — до 600px
+   ========================================================= */
+
+/* ----- Планшет (оператор and) ----- */
+@media (min-width: 601px) and (max-width: 1000px) {
+    .labs {
+        grid-template-columns: repeat(5, 1fr);
+    }
+
+    .layout {
+        grid-template-columns: 1fr;
+    }
+
+    /* меню — у дві колонки над вмістом */
+    .menu {
+        position: static;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .menu__item--sub {
+        margin-left: 0;
+        text-align: left;
+    }
+}
+
+/* ----- Смартфон ----- */
+@media (max-width: 600px) {
+    .header {
+        flex-direction: column-reverse;
+        gap: 16px;
+    }
+
+    .header h1 {
+        font-size: 17px;
+    }
+
+    .header__photo {
+        width: 90px;
+        height: 112px;
+    }
+
+    /* кнопки лабораторних — одна стрічка з горизонтальною прокруткою */
+    .labs {
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        padding-bottom: 6px;
+    }
+
+    .labs__item {
+        flex: 0 0 120px;
+        min-height: 48px;
+        scroll-snap-align: start;
+    }
+
+    .layout {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .menu {
+        position: static;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .menu__item,
+    .menu__item--sub {
+        margin-left: 0;
+        padding: 8px 14px;
+        font-size: 13px;
+        text-align: left;
+    }
+
+    .content {
+        padding: 20px 16px;
+    }
+
+    .block h2 {
+        font-size: 22px;
+    }
+
+    pre {
+        font-size: 12px;
+        padding: 14px;
+    }
+
+    .theory-table td:first-child,
+    .links-table td:nth-child(2) {
+        white-space: normal;
+    }
+}
+
+/* ----- Смартфон або планшет у горизонтальній орієнтації (кома — «або») ----- */
+@media (max-height: 500px) and (orientation: landscape), (max-width: 1000px) and (orientation: landscape) {
+    .menu {
+        position: static;
+    }
+}
+
+/* ----- Друк: лише вміст звіту (оператор only) ----- */
+@media only print {
+    .labs,
+    .menu,
+    .footer {
+        display: none;
+    }
+
+    .layout {
+        display: block;
+    }
+
+    .content {
+        border: none;
+        padding: 0;
+    }
+
+    pre {
+        white-space: pre-wrap;
+    }
+}
+
+/* ----- Широкі екрани без миші: більші кнопки меню (оператор not) ----- */
+@media not all and (pointer: fine) {
+    .menu__item {
+        padding-top: 12px;
+        padding-bottom: 12px;
+    }
+}</code></pre>
+                <figure class="figure-mobile">
+                    <img src="images/lab3/report-mobile.png" alt="Звітний документ на смартфоні" class="screenshot">
+                    <figcaption>Рис. 5 — Звітний документ на екрані смартфона</figcaption>
+                </figure>
+            </section>
+
+            <!-- Завдання 2 -->
+            <section id="task2" class="block">
+                <h2>Завдання №2</h2>
+                <p>Номер у списку групи — 6, тому таблична верстка виконана за <b>варіантом 6</b>, а блокова — за <b>варіантом 7</b>.</p>
+                <div class="screens">
+                    <figure class="screen-narrow">
+                        <img src="images/lab3/scheme-v6.png" alt="Схема варіанта 6" class="scheme">
+                        <figcaption>Варіант 6 — таблична верстка</figcaption>
+                    </figure>
+                    <figure class="screen-narrow">
+                        <img src="images/lab3/scheme-v7.png" alt="Схема варіанта 7" class="scheme">
+                        <figcaption>Варіант 7 — блокова верстка</figcaption>
+                    </figure>
+                </div>
+                <table class="theory-table">
+                    <thead>
+                        <tr><th>Тип</th><th>Як задано ширину</th><th>Поведінка</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Фіксований</td><td>У пікселях</td><td>Макет має однакову ширину на будь-якому екрані. На вузькому з'являється горизонтальна прокрутка, на широкому лишається порожнє місце.</td></tr>
+                        <tr><td>Гумовий</td><td>У відсотках</td><td>Макет розтягується і стискається разом з вікном. На дуже широкому екрані рядки тексту стають задовгими, на вузькому колонки стають тісними.</td></tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <section id="table-fixed" class="block">
+                <h2>Фіксована таблична верстка (варіант 6)</h2>
+                <p><a href="lab3/task2/table-fixed.html" target="_blank" class="open-link">Відкрити сторінку</a></p>
+                <p>Ширина таблиці — 960px, ширини колонок задані в пікселях через <code>&lt;colgroup&gt;</code>. Шапка і підвал об'єднують чотири колонки атрибутом <code>colspan="4"</code>. Властивість <code>table-layout: fixed</code> змушує браузер брати ширини колонок з <code>&lt;col&gt;</code>, а не підлаштовувати їх під вміст.</p>
+                <div class="screens">
+                    <figure>
+                        <img src="images/lab3/table-fixed-wide.png" alt="Фіксована таблична верстка, вікно 1280px" class="screenshot">
+                        <figcaption>Вікно 1280px</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="images/lab3/table-fixed-narrow.png" alt="Фіксована таблична верстка, вікно 700px" class="screenshot">
+                        <figcaption>Вікно 700px — макет не вміщується</figcaption>
+                    </figure>
+                </div>
+                <h3>HTML-код</h3>
+<pre class="code-long"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="uk"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Фіксована таблична верстка — варіант 6&lt;/title&gt;
+    &lt;style&gt;
+        /* CSS-код наведено нижче */
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+    &lt;table class="layout"&gt;
+        &lt;colgroup&gt;
+            &lt;col class="col-2"&gt;
+            &lt;col class="col-3"&gt;
+            &lt;col class="col-4"&gt;
+            &lt;col class="col-5"&gt;
+        &lt;/colgroup&gt;
+        &lt;tr&gt;
+            &lt;td colspan="4" class="block-1"&gt;
+                &lt;div class="logo"&gt;&lt;/div&gt;
+                &lt;span class="num"&gt;1&lt;/span&gt;
+                Шапка сайту
+            &lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr class="middle"&gt;
+            &lt;td class="block-2"&gt;
+                &lt;span class="num"&gt;2&lt;/span&gt;
+                &lt;ul&gt;
+                    &lt;li&gt;Головна&lt;/li&gt;
+                    &lt;li&gt;Каталог&lt;/li&gt;
+                    &lt;li&gt;Ігри&lt;/li&gt;
+                    &lt;li&gt;Контакти&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/td&gt;
+            &lt;td class="block-3"&gt;
+                &lt;span class="num"&gt;3&lt;/span&gt;
+                &lt;p&gt;Новини: оновлення модів за тиждень.&lt;/p&gt;
+            &lt;/td&gt;
+            &lt;td class="block-4"&gt;
+                &lt;span class="num"&gt;4&lt;/span&gt;
+                &lt;p&gt;Основний вміст сторінки. Ширина таблиці задана в пікселях (960px), тому при зміні розміру вікна макет не змінюється.&lt;/p&gt;
+            &lt;/td&gt;
+            &lt;td class="block-5"&gt;
+                &lt;span class="num"&gt;5&lt;/span&gt;
+                &lt;p&gt;Популярне: найбільше завантажень.&lt;/p&gt;
+            &lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td colspan="4" class="block-6"&gt;
+                &lt;span class="num"&gt;6&lt;/span&gt;
+                &amp;copy; 2026 Підвал сайту
+            &lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/table&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                <h3>CSS-код</h3>
+<pre class="code-long"><code>body {
+    margin: 0;
+    padding: 20px 0;
+    font-family: Verdana, Arial, sans-serif;
+    font-size: 14px;
+    background-color: #f2f2f2;
+}
+
+.layout {
+    width: 960px;
+    margin: 0 auto;
+    table-layout: fixed;
+    border-collapse: separate;
+    border-spacing: 6px 0;
+    background-color: #ffffff;
+    border: 1px solid #000000;
+    box-shadow: 8px 8px 0 #9a9a9a;
+}
+
+.layout td {
+    vertical-align: top;
+    padding: 15px;
+    border: 1px solid #000000;
+}
+
+.num {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+/* 1 — шапка */
+.block-1 {
+    height: 60px;
+    background-color: #ffcc00;
+}
+
+.logo {
+    float: left;
+    width: 180px;
+    height: 26px;
+    background-color: #ffffff;
+    border: 1px solid #000000;
+    margin-right: 20px;
+}
+
+.block-1 .num {
+    float: right;
+    margin-right: 30px;
+}
+
+/* ширина колонок задається через colgroup */
+.col-2 {
+    width: 200px;
+}
+
+.col-3,
+.col-5 {
+    width: 180px;
+}
+
+/* 2 — меню */
+.block-2 {
+    background-color: #3366ff;
+    color: #ffffff;
+}
+
+/* 3 і 5 — бічні колонки */
+.block-3,
+.block-5 {
+    background-color: #ff5555;
+    color: #ffffff;
+}
+
+/* 4 — основний вміст */
+.block-4 {
+    background-color: #ffffff;
+}
+
+.middle td {
+    height: 400px;
+}
+
+/* 6 — підвал */
+.block-6 {
+    height: 50px;
+    background-color: #ffcc00;
+}
+
+.layout ul {
+    margin: 10px 0 0;
+    padding-left: 18px;
+}
+
+.layout p {
+    margin: 10px 0 0;
+}</code></pre>
+            </section>
+
+            <section id="table-rubber" class="block">
+                <h2>Гумова таблична верстка (варіант 6)</h2>
+                <p><a href="lab3/task2/table-rubber.html" target="_blank" class="open-link">Відкрити сторінку</a></p>
+                <p>Розмітка така сама, як у фіксованому варіанті. Відрізняється лише CSS: таблиця займає 90% ширини вікна, а колонки задані у відсотках (20%, 18%, решта — центральна колонка).</p>
+                <div class="screens">
+                    <figure>
+                        <img src="images/lab3/table-rubber-wide.png" alt="Гумова таблична верстка, вікно 1280px" class="screenshot">
+                        <figcaption>Вікно 1280px</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="images/lab3/table-rubber-narrow.png" alt="Гумова таблична верстка, вікно 700px" class="screenshot">
+                        <figcaption>Вікно 700px — макет стиснувся</figcaption>
+                    </figure>
+                </div>
+                <h3>Відмінності CSS від фіксованого варіанта</h3>
+<pre><code>.layout {
+    width: 90%;
+    margin: 0 auto;
+    table-layout: fixed;
+    border-collapse: separate;
+    border-spacing: 6px 0;
+    background-color: #ffffff;
+    border: 1px solid #000000;
+    box-shadow: 8px 8px 0 #9a9a9a;
+}
+
+/* ширина колонок задається через colgroup */
+.col-2 {
+    width: 20%;
+}
+
+.col-3,
+.col-5 {
+    width: 18%;
+}</code></pre>
+                <h3>Повний CSS-код</h3>
+<pre class="code-long"><code>body {
+    margin: 0;
+    padding: 20px 0;
+    font-family: Verdana, Arial, sans-serif;
+    font-size: 14px;
+    background-color: #f2f2f2;
+}
+
+.layout {
+    width: 90%;
+    margin: 0 auto;
+    table-layout: fixed;
+    border-collapse: separate;
+    border-spacing: 6px 0;
+    background-color: #ffffff;
+    border: 1px solid #000000;
+    box-shadow: 8px 8px 0 #9a9a9a;
+}
+
+.layout td {
+    vertical-align: top;
+    padding: 15px;
+    border: 1px solid #000000;
+}
+
+.num {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+/* 1 — шапка */
+.block-1 {
+    height: 60px;
+    background-color: #ffcc00;
+}
+
+.logo {
+    float: left;
+    width: 180px;
+    height: 26px;
+    background-color: #ffffff;
+    border: 1px solid #000000;
+    margin-right: 20px;
+}
+
+.block-1 .num {
+    float: right;
+    margin-right: 30px;
+}
+
+/* ширина колонок задається через colgroup */
+.col-2 {
+    width: 20%;
+}
+
+.col-3,
+.col-5 {
+    width: 18%;
+}
+
+/* 2 — меню */
+.block-2 {
+    background-color: #3366ff;
+    color: #ffffff;
+}
+
+/* 3 і 5 — бічні колонки */
+.block-3,
+.block-5 {
+    background-color: #ff5555;
+    color: #ffffff;
+}
+
+/* 4 — основний вміст */
+.block-4 {
+    background-color: #ffffff;
+}
+
+.middle td {
+    height: 400px;
+}
+
+/* 6 — підвал */
+.block-6 {
+    height: 50px;
+    background-color: #ffcc00;
+}
+
+.layout ul {
+    margin: 10px 0 0;
+    padding-left: 18px;
+}
+
+.layout p {
+    margin: 10px 0 0;
+}</code></pre>
+            </section>
+
+            <section id="block-fixed" class="block">
+                <h2>Фіксована блокова верстка (варіант 7)</h2>
+                <p><a href="lab3/task2/block-fixed.html" target="_blank" class="open-link">Відкрити сторінку</a></p>
+                <p>Обгортка <code>.wrapper</code> має ширину 900px і вирівняна по центру через <code>margin: 0 auto</code>; білі поля з боків створені внутрішнім відступом <code>padding</code>. Колонка 2 плаває ліворуч (<code>float: left</code>), колонка 5 — праворуч (<code>float: right</code>), а блок 4 займає простір між ними завдяки <code>margin: 0 180px</code>. Підвал має <code>clear: both</code>, щоб опуститися під плаваючі колонки, а <code>overflow: hidden</code> у контейнера колонок не дає йому «схлопнутися».</p>
+                <div class="screens">
+                    <figure>
+                        <img src="images/lab3/block-fixed-wide.png" alt="Фіксована блокова верстка, вікно 1280px" class="screenshot">
+                        <figcaption>Вікно 1280px</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="images/lab3/block-fixed-narrow.png" alt="Фіксована блокова верстка, вікно 700px" class="screenshot">
+                        <figcaption>Вікно 700px — макет не вміщується</figcaption>
+                    </figure>
+                </div>
+                <h3>HTML-код</h3>
+<pre class="code-long"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="uk"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Фіксована блокова верстка — варіант 7&lt;/title&gt;
+    &lt;style&gt;
+        /* CSS-код наведено нижче */
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+    &lt;div class="wrapper"&gt;
+        &lt;div class="page"&gt;
+            &lt;div class="header"&gt;
+                &lt;span class="num"&gt;1&lt;/span&gt;
+                Шапка сайту
+            &lt;/div&gt;
+
+            &lt;div class="columns"&gt;
+                &lt;div class="left"&gt;
+                    &lt;span class="num"&gt;2&lt;/span&gt;
+                    &lt;ul&gt;
+                        &lt;li&gt;Головна&lt;/li&gt;
+                        &lt;li&gt;Каталог&lt;/li&gt;
+                        &lt;li&gt;Ігри&lt;/li&gt;
+                        &lt;li&gt;Контакти&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/div&gt;
+
+                &lt;div class="right"&gt;
+                    &lt;span class="num"&gt;5&lt;/span&gt;
+                    &lt;p&gt;Популярні моди тижня.&lt;/p&gt;
+                &lt;/div&gt;
+
+                &lt;div class="content"&gt;
+                    &lt;span class="num"&gt;4&lt;/span&gt;
+                    &lt;p&gt;Основний вміст сторінки. Обгортка має ширину 900px, ліва та права колонки — по 180px. Колонки 2 і 5 плаваючі (float), а блок 4 займає простір між ними завдяки відступам margin.&lt;/p&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+
+            &lt;div class="footer"&gt;
+                &lt;span class="num"&gt;3&lt;/span&gt;
+                &amp;copy; 2026 Підвал сайту
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                <h3>CSS-код</h3>
+<pre class="code-long"><code>body {
+    margin: 0;
+    padding: 20px 0;
+    font-family: Verdana, Arial, sans-serif;
+    font-size: 14px;
+    background-color: #ffffff;
+}
+
+/* обгортка по центру сторінки */
+.wrapper {
+    width: 900px;
+    margin: 0 auto;
+    padding: 0 40px;
+    background-color: #ffffff;
+    border: 1px solid #000000;
+    box-shadow: 8px 8px 0 #9a9a9a;
+}
+
+/* кольорові блоки всередині білої рамки */
+.page {
+    border-left: 1px solid #000000;
+    border-right: 1px solid #000000;
+}
+
+.num {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+/* 1 — шапка */
+.header {
+    height: 60px;
+    padding: 15px;
+    background-color: #3366ff;
+    color: #ffffff;
+}
+
+/* контейнер для плаваючих колонок */
+.columns {
+    overflow: hidden;
+    background-color: #ffffff;
+}
+
+/* 2 — ліва колонка */
+.left {
+    float: left;
+    width: 180px;
+    height: 400px;
+    padding: 15px;
+    box-sizing: border-box;
+    background-color: #ffcc00;
+    border-right: 1px solid #000000;
+}
+
+/* 5 — права колонка */
+.right {
+    float: right;
+    width: 180px;
+    height: 400px;
+    padding: 15px;
+    box-sizing: border-box;
+    background-color: #ffcc00;
+    border-left: 1px solid #000000;
+}
+
+/* 4 — основний вміст */
+.content {
+    margin: 0 180px;
+    height: 400px;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+/* 3 — підвал */
+.footer {
+    clear: both;
+    height: 50px;
+    padding: 15px;
+    background-color: #3366ff;
+    color: #ffffff;
+}
+
+.wrapper ul {
+    margin: 10px 0 0;
+    padding-left: 18px;
+}
+
+.wrapper p {
+    margin: 10px 0 0;
+}</code></pre>
+            </section>
+
+            <section id="block-rubber" class="block">
+                <h2>Гумова блокова верстка (варіант 7)</h2>
+                <p><a href="lab3/task2/block-rubber.html" target="_blank" class="open-link">Відкрити сторінку</a></p>
+                <p>Обгортка займає 80% ширини вікна, бічні поля — по 5%, колонки 2 і 5 — по 20% ширини, центральний блок має відступи <code>margin: 0 20%</code>.</p>
+                <div class="screens">
+                    <figure>
+                        <img src="images/lab3/block-rubber-wide.png" alt="Гумова блокова верстка, вікно 1280px" class="screenshot">
+                        <figcaption>Вікно 1280px</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="images/lab3/block-rubber-narrow.png" alt="Гумова блокова верстка, вікно 700px" class="screenshot">
+                        <figcaption>Вікно 700px — макет стиснувся</figcaption>
+                    </figure>
+                </div>
+                <h3>Відмінності CSS від фіксованого варіанта</h3>
+<pre><code>/* обгортка по центру сторінки */
+.wrapper {
+    width: 80%;
+    margin: 0 auto;
+    padding: 0 5%;
+    background-color: #ffffff;
+    border: 1px solid #000000;
+    box-shadow: 8px 8px 0 #9a9a9a;
+}
+
+/* 2 — ліва колонка */
+.left {
+    float: left;
+    width: 20%;
+    height: 400px;
+    padding: 15px;
+    box-sizing: border-box;
+    background-color: #ffcc00;
+    border-right: 1px solid #000000;
+}
+
+/* 5 — права колонка */
+.right {
+    float: right;
+    width: 20%;
+    height: 400px;
+    padding: 15px;
+    box-sizing: border-box;
+    background-color: #ffcc00;
+    border-left: 1px solid #000000;
+}
+
+/* 4 — основний вміст */
+.content {
+    margin: 0 20%;
+    height: 400px;
+    padding: 15px;
+    box-sizing: border-box;
+}</code></pre>
+                <h3>Повний CSS-код</h3>
+<pre class="code-long"><code>body {
+    margin: 0;
+    padding: 20px 0;
+    font-family: Verdana, Arial, sans-serif;
+    font-size: 14px;
+    background-color: #ffffff;
+}
+
+/* обгортка по центру сторінки */
+.wrapper {
+    width: 80%;
+    margin: 0 auto;
+    padding: 0 5%;
+    background-color: #ffffff;
+    border: 1px solid #000000;
+    box-shadow: 8px 8px 0 #9a9a9a;
+}
+
+/* кольорові блоки всередині білої рамки */
+.page {
+    border-left: 1px solid #000000;
+    border-right: 1px solid #000000;
+}
+
+.num {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+/* 1 — шапка */
+.header {
+    height: 60px;
+    padding: 15px;
+    background-color: #3366ff;
+    color: #ffffff;
+}
+
+/* контейнер для плаваючих колонок */
+.columns {
+    overflow: hidden;
+    background-color: #ffffff;
+}
+
+/* 2 — ліва колонка */
+.left {
+    float: left;
+    width: 20%;
+    height: 400px;
+    padding: 15px;
+    box-sizing: border-box;
+    background-color: #ffcc00;
+    border-right: 1px solid #000000;
+}
+
+/* 5 — права колонка */
+.right {
+    float: right;
+    width: 20%;
+    height: 400px;
+    padding: 15px;
+    box-sizing: border-box;
+    background-color: #ffcc00;
+    border-left: 1px solid #000000;
+}
+
+/* 4 — основний вміст */
+.content {
+    margin: 0 20%;
+    height: 400px;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+/* 3 — підвал */
+.footer {
+    clear: both;
+    height: 50px;
+    padding: 15px;
+    background-color: #3366ff;
+    color: #ffffff;
+}
+
+.wrapper ul {
+    margin: 10px 0 0;
+    padding-left: 18px;
+}
+
+.wrapper p {
+    margin: 10px 0 0;
+}</code></pre>
+            </section>
+
+            <!-- Завдання 3 -->
+            <section id="task3" class="block">
+                <h2>Завдання №3. Flexbox</h2>
+                <p>Остання цифра студентського квитка — 2, тому виконано <b>варіант 2</b>: сторінка «Професія Java-розробник».</p>
+                <figure>
+                    <img src="images/lab3/scheme-flex-v2.png" alt="Макет варіанта 2" class="screenshot" style="max-width: 420px;">
+                    <figcaption>Макет варіанта 2 із завдання</figcaption>
+                </figure>
+
+                <h3>Як використано Flexbox</h3>
+                <table class="theory-table">
+                    <thead>
+                        <tr><th>Блок</th><th>Властивості</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Переваги під заголовком</td><td><code>display: flex; flex-wrap: wrap;</code> елементи <code>flex: 1 1 13rem</code> — однакова ширина, перенос на новий рядок, коли місця менше ніж 13rem</td></tr>
+                        <tr><td>Картки етапів</td><td>Контейнер <code>flex-wrap: wrap</code>, картка <code>flex: 1 1 calc(25% - 1.5rem)</code> — 4 в рядку. Сама картка теж flex-контейнер з <code>flex-direction: column</code>, текстова частина має <code>flex: 1</code>, тому темні блоки із зображеннями вирівнюються по нижньому краю</td></tr>
+                        <tr><td>Номер етапу</td><td><code>display: flex; align-items: center; justify-content: center</code> — цифра по центру кола</td></tr>
+                        <tr><td>Рівні навчання</td><td><code>align-items: center</code>, зображення <code>flex: 0 1 60%</code>, текст <code>flex: 1 1 40%</code></td></tr>
+                        <tr><td>Підвал</td><td><code>justify-content: space-between</code> — копірайт ліворуч, соцмережі праворуч</td></tr>
+                    </tbody>
+                </table>
+                <p>На планшеті (600–991px) картки етапів стають по дві в рядку, на смартфоні (до 599px) усі блоки вишиковуються в одну колонку. У рівнях навчання змінюється напрям <code>flex-direction: column</code>.</p>
+            </section>
+
+            <section id="flex-view" class="block">
+                <h2>Зовнішній вигляд сторінки</h2>
+                <p><a href="lab3/flexbox/index.html" target="_blank" class="open-link">Відкрити сторінку</a></p>
+                <div class="screens">
+                    <figure>
+                        <img src="images/lab3/flex-desktop.png" alt="Сторінка Flexbox на десктопі" class="screenshot">
+                        <figcaption>Рис. 6 — Десктопна версія</figcaption>
+                    </figure>
+                    <figure class="screen-narrow">
+                        <img src="images/lab3/flex-mobile.png" alt="Сторінка Flexbox на смартфоні" class="screenshot">
+                        <figcaption>Рис. 7 — Мобільна версія</figcaption>
+                    </figure>
+                </div>
+            </section>
+
+            <section id="flex-html" class="block">
+                <h2>HTML-код</h2>
+                <p>Файл <code>lab3/flexbox/index.html</code>:</p>
+<pre class="code-long"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="uk"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Професія Java-розробник&lt;/title&gt;
+    &lt;link rel="preconnect" href="https://fonts.googleapis.com"&gt;
+    &lt;link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;800&amp;display=swap" rel="stylesheet"&gt;
+    &lt;link rel="stylesheet" href="css/style.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+    &lt;!-- Перший екран --&gt;
+    &lt;header class="hero"&gt;
+        &lt;div class="container"&gt;
+            &lt;h1 class="hero__title"&gt;&lt;span&gt;Професія Java-розробник&lt;/span&gt;&lt;/h1&gt;
+
+            &lt;ul class="perks"&gt;
+                &lt;li class="perks__item"&gt;Портфоліо для старту кар'єри&lt;/li&gt;
+                &lt;li class="perks__item"&gt;Навчання на реальних кейсах&lt;/li&gt;
+                &lt;li class="perks__item"&gt;Заробіток після 4 місяців навчання&lt;/li&gt;
+                &lt;li class="perks__item"&gt;Можна працювати віддалено&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/div&gt;
+    &lt;/header&gt;
+
+    &lt;main&gt;
+        &lt;!-- Етапи навчання --&gt;
+        &lt;section class="steps"&gt;
+            &lt;div class="container"&gt;
+                &lt;h2 class="section-title"&gt;Як проходить навчання&lt;/h2&gt;
+
+                &lt;div class="steps__list"&gt;
+                    &lt;article class="step"&gt;
+                        &lt;div class="step__body"&gt;
+                            &lt;span class="step__num"&gt;1&lt;/span&gt;
+                            &lt;h3 class="step__title"&gt;Дивитесь відеолекції&lt;/h3&gt;
+                            &lt;p class="step__text"&gt;Якісне відео зі зрозумілим поясненням теорії.&lt;/p&gt;
+                        &lt;/div&gt;
+                        &lt;div class="step__image"&gt;
+                            &lt;img src="images/step-1.png" alt="Плеєр з відеолекцією"&gt;
+                        &lt;/div&gt;
+                    &lt;/article&gt;
+
+                    &lt;article class="step"&gt;
+                        &lt;div class="step__body"&gt;
+                            &lt;span class="step__num"&gt;2&lt;/span&gt;
+                            &lt;h3 class="step__title"&gt;Робите завдання і відправляєте на перевірку&lt;/h3&gt;
+                            &lt;p class="step__text"&gt;Поспішати не треба, обирайте зручний режим навчання.&lt;/p&gt;
+                        &lt;/div&gt;
+                        &lt;div class="step__image"&gt;
+                            &lt;img src="images/step-2.png" alt="Сторінка з домашнім завданням"&gt;
+                        &lt;/div&gt;
+                    &lt;/article&gt;
+
+                    &lt;article class="step"&gt;
+                        &lt;div class="step__body"&gt;
+                            &lt;span class="step__num"&gt;3&lt;/span&gt;
+                            &lt;h3 class="step__title"&gt;Отримуєте розбір вашої роботи&lt;/h3&gt;
+                            &lt;p class="step__text"&gt;Куратор розповість про помилки і про те, як їх виправити.&lt;/p&gt;
+                        &lt;/div&gt;
+                        &lt;div class="step__image"&gt;
+                            &lt;img src="images/step-3.png" alt="Куратор пояснює роботу студенту"&gt;
+                        &lt;/div&gt;
+                    &lt;/article&gt;
+
+                    &lt;article class="step"&gt;
+                        &lt;div class="step__body"&gt;
+                            &lt;span class="step__num"&gt;4&lt;/span&gt;
+                            &lt;h3 class="step__title"&gt;Працюєте над помилками&lt;/h3&gt;
+                            &lt;p class="step__text"&gt;Проходите перевірку ще раз, щоб переконатися, що цього разу все правильно.&lt;/p&gt;
+                        &lt;/div&gt;
+                        &lt;div class="step__image"&gt;
+                            &lt;img src="images/step-4.png" alt="Диплом про закінчення курсу"&gt;
+                        &lt;/div&gt;
+                    &lt;/article&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/section&gt;
+
+        &lt;!-- Рівні навчання --&gt;
+        &lt;section class="levels"&gt;
+            &lt;div class="container"&gt;
+                &lt;h2 class="section-title"&gt;Рівні навчання&lt;/h2&gt;
+
+                &lt;div class="level"&gt;
+                    &lt;div class="level__image"&gt;
+                        &lt;img src="images/level-1.png" alt="Ноутбук з панеллю керування блогом"&gt;
+                    &lt;/div&gt;
+                    &lt;div class="level__text"&gt;
+                        &lt;h3&gt;Перший рівень: чітка і зрозуміла теорія&lt;/h3&gt;
+                        &lt;p&gt;За 4 місяці вам необхідно буде пройти 16 тем. Ви самостійно вивчите базові навички, з якими зможете створювати справжні проєкти. Ви створите дипломний проєкт — рушій блогу у веб-інтерфейсі. Захист проєкту проходить у відкритому режимі — на нашому майданчику або по відеозв'язку.&lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+
+                &lt;div class="level"&gt;
+                    &lt;div class="level__image"&gt;
+                        &lt;img src="images/level-2.png" alt="Інтерфейс соціальної мережі"&gt;
+                    &lt;/div&gt;
+                    &lt;div class="level__text"&gt;
+                        &lt;h3&gt;Другий рівень: інтенсивна практика&lt;/h3&gt;
+                        &lt;p&gt;Під керівництвом наставника ви в складі команди створите власну соціальну мережу. Фактично ця частина програми прирівнюється до стажування. Вам видадуть ТЗ і дизайн проєкту. Усі процеси, через які ви пройдете, максимально наближені до бойових умов. Саме так створюється комерційне програмне забезпечення у фірмах-роботодавцях.&lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/section&gt;
+    &lt;/main&gt;
+
+    &lt;!-- Підвал --&gt;
+    &lt;footer class="footer"&gt;
+        &lt;div class="container footer__inner"&gt;
+            &lt;p class="footer__copy"&gt;&amp;copy; 2026&lt;/p&gt;
+
+            &lt;ul class="socials"&gt;
+                &lt;li&gt;
+                    &lt;a href="#" class="socials__link" aria-label="Facebook"&gt;
+                        &lt;svg viewBox="0 0 24 24" width="18" height="18"&gt;&lt;path fill="currentColor" d="M14 8h3V4h-3c-2.8 0-4.5 1.8-4.5 4.6V11H7v4h2.5v9h4v-9h3l.5-4h-3.5V9c0-.6.4-1 1-1z"/&gt;&lt;/svg&gt;
+                    &lt;/a&gt;
+                &lt;/li&gt;
+                &lt;li&gt;
+                    &lt;a href="#" class="socials__link" aria-label="YouTube"&gt;
+                        &lt;svg viewBox="0 0 24 24" width="18" height="18"&gt;&lt;rect x="2" y="5" width="20" height="14" rx="4" fill="currentColor"/&gt;&lt;path d="M10 9v6l5-3z" fill="#000"/&gt;&lt;/svg&gt;
+                    &lt;/a&gt;
+                &lt;/li&gt;
+                &lt;li&gt;
+                    &lt;a href="#" class="socials__link" aria-label="Telegram"&gt;
+                        &lt;svg viewBox="0 0 24 24" width="18" height="18"&gt;&lt;path fill="currentColor" d="M21.5 3.5 2.8 10.7c-1 .4-1 1.6 0 1.9l4.7 1.5 1.8 5.6c.3.8 1.3 1 1.9.4l2.6-2.5 4.9 3.6c.8.6 1.9.2 2.1-.8l3-15.4c.2-1.1-.8-1.9-1.8-1.5zM9.4 14.3l8.4-7.5-6.6 8.6-.3 2.9z"/&gt;&lt;/svg&gt;
+                    &lt;/a&gt;
+                &lt;/li&gt;
+                &lt;li&gt;
+                    &lt;a href="#" class="socials__link" aria-label="Instagram"&gt;
+                        &lt;svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2"&gt;&lt;rect x="3" y="3" width="18" height="18" rx="5"/&gt;&lt;circle cx="12" cy="12" r="4"/&gt;&lt;circle cx="17.5" cy="6.5" r="0.6" fill="currentColor"/&gt;&lt;/svg&gt;
+                    &lt;/a&gt;
+                &lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/div&gt;
+    &lt;/footer&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            </section>
+
+            <section id="flex-css" class="block">
+                <h2>CSS-код сторінки</h2>
+                <p>Файл <code>lab3/flexbox/css/style.css</code>:</p>
+<pre class="code-long"><code>/* ===== Загальні налаштування ===== */
+:root {
+    --orange: #ffbe5c;
+    --dark: #1c1c1c;
+    --text: #1a1a1a;
+    --text-soft: #4d4d4d;
+    --border: #1a1a1a;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: var(--text);
+    background-color: #ffffff;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.container {
+    width: 100%;
+    max-width: 75rem;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.section-title {
+    font-size: clamp(1.75rem, 1.2rem + 2.5vw, 2.75rem);
+    font-weight: 800;
+    line-height: 1.15;
+    margin-bottom: 2.5rem;
+}
+
+/* ===== Перший екран ===== */
+.hero {
+    padding: 3rem 0 2rem;
+}
+
+.hero__title {
+    font-size: clamp(2rem, 1rem + 4.5vw, 4rem);
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 1.75rem;
+}
+
+/* жовтий фон під заголовком */
+.hero__title span {
+    background-color: var(--orange);
+    padding: 0 0.5rem;
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+}
+
+/* переваги: елементи в рядок, переносяться при нестачі місця */
+.perks {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.perks__item {
+    flex: 1 1 13rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background-color: var(--orange);
+    font-weight: 600;
+    font-size: 0.9375rem;
+    line-height: 1.3;
+}
+
+.perks__item::before {
+    content: "";
+    flex-shrink: 0;
+    width: 0.375rem;
+    height: 0.375rem;
+    margin-top: 0.45em;
+    border-radius: 50%;
+    background-color: var(--text);
+}
+
+/* ===== Етапи навчання ===== */
+.steps {
+    padding: 3rem 0;
+}
+
+.steps__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+/* картка — колонка: текст зверху, зображення внизу */
+.step {
+    flex: 1 1 calc(25% - 1.5rem);
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--border);
+    transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.step:hover {
+    transform: translateY(-0.375rem);
+    box-shadow: 0 0.75rem 1.5rem rgba(0, 0, 0, 0.12);
+}
+
+.step__body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1.5rem 1.25rem 2rem;
+}
+
+.step__num {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.25rem;
+    height: 2.25rem;
+    margin-bottom: 1.5rem;
+    border-radius: 50%;
+    background-color: var(--orange);
+    border: 1px solid #e0a040;
+    font-weight: 600;
+}
+
+.step__title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    line-height: 1.3;
+    margin-bottom: 0.5rem;
+}
+
+.step__text {
+    color: var(--text-soft);
+    font-size: 0.9375rem;
+}
+
+.step__image {
+    background-color: var(--dark);
+    padding: 1rem 0.5rem 0;
+}
+
+/* ===== Рівні навчання ===== */
+.levels {
+    padding: 2rem 0 4rem;
+}
+
+.level {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+}
+
+.level + .level {
+    margin-top: 3rem;
+}
+
+.level__image {
+    flex: 0 1 60%;
+}
+
+.level__text {
+    flex: 1 1 40%;
+}
+
+.level__text h3 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+}
+
+.level__text p {
+    color: var(--text-soft);
+    font-size: 0.9375rem;
+}
+
+/* ===== Підвал ===== */
+.footer {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+.footer__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+}
+
+.footer__copy {
+    font-size: 0.875rem;
+}
+
+.socials {
+    list-style: none;
+    display: flex;
+    gap: 0.75rem;
+}
+
+.socials__link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.25rem;
+    height: 2.25rem;
+    background-color: #ffffff;
+    color: #000000;
+    transition: background-color 0.2s;
+}
+
+.socials__link:hover {
+    background-color: var(--orange);
+}
+
+/* ===== Адаптивність ===== */
+
+/* планшет: дві картки в рядку */
+@media (min-width: 600px) and (max-width: 991px) {
+    .step {
+        flex-basis: calc(50% - 1.5rem);
+    }
+
+    .level {
+        gap: 2rem;
+    }
+
+    .level__image {
+        flex-basis: 50%;
+    }
+
+    .level__text {
+        flex-basis: 50%;
+    }
+}
+
+/* смартфон: усе в одну колонку */
+@media (max-width: 599px) {
+    .step {
+        flex-basis: 100%;
+    }
+
+    .level {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 1.5rem;
+    }
+
+    .perks__item {
+        flex-basis: 100%;
+    }
+}</code></pre>
+            </section>
+
+            <!-- Висновки -->
+            <section id="conclusions" class="block">
+                <h2>Висновки</h2>
+                <p><b>Завдання №1.</b> Макет власного сайту MODHUB вдосконалено та зверстано як адаптивний. Сайт має семантичну структуру <code>header</code> — <code>main</code> — <code>footer</code>, бургер-меню на смартфонах, адаптивні сітки на CSS Grid і Flexbox, які перебудовуються для трьох версій: десктопної (від 1024px), планшетної (768–1023px) та мобільної (до 767px). У медіазапитах застосовано логічні оператори <code>and</code>, кому та <code>not</code>, а також умови орієнтації пристрою. Розміри задано у відносних одиницях <code>rem</code>, <code>%</code>, <code>vw</code>, <code>vh</code>. Додано анімації появи контенту, відкриття меню та ефекти наведення. Файли розкладено по папках <code>css</code>, <code>js</code>, <code>images</code>, <code>pages</code>.</p>
+                <p><b>Завдання №2.</b> Виконано таблична верстка за варіантом 6 і блокова верстка на плаваючих елементах за варіантом 7, кожна у фіксованому та гумовому виконанні. Порівняння показало, що фіксований макет простіше контролювати, але він не пристосовується до екрана, а гумовий займає всю доступну ширину, проте на дуже вузьких і дуже широких екранах стає незручним. Таблична верстка зручна для вирівнювання колонок за висотою, але змішує структуру сторінки з даними, тому для макетів сторінок не рекомендується. Блокова верстка на <code>float</code> вимагає додаткових прийомів (<code>clear</code>, <code>overflow: hidden</code>), які в сучасній верстці замінюють Flexbox і Grid.</p>
+                <p><b>Завдання №3.</b> За варіантом 2 зверстано сторінку «Професія Java-розробник» засобами Flexbox. Використано <code>flex-wrap</code>, <code>flex-basis</code>, <code>flex-grow</code>, <code>flex-direction</code>, <code>justify-content</code>, <code>align-items</code>, вкладені flex-контейнери. Flexbox дозволив отримати картки однакової висоти та вирівнювання без фіксованих розмірів, а зміна кількох властивостей у медіазапитах перебудовує сторінку для планшета та смартфона.</p>
+                <p>Звітний HTML-документ доповнено розділом лабораторної роботи №3 і медіазапитами, завдяки яким він коректно відображається на планшетах і смартфонах.</p>
+            </section>
+
+        </main>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2026 Захаров Олег, група ІА-44, ФІОТ</p>
+    </footer>
+
+</body>
+</html>

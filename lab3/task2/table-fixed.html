@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Фіксована таблична верстка — варіант 6</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px 0;
+            font-family: Verdana, Arial, sans-serif;
+            font-size: 14px;
+            background-color: #f2f2f2;
+        }
+
+        .layout {
+            width: 960px;
+            margin: 0 auto;
+            table-layout: fixed;
+            border-collapse: separate;
+            border-spacing: 6px 0;
+            background-color: #ffffff;
+            border: 1px solid #000000;
+            box-shadow: 8px 8px 0 #9a9a9a;
+        }
+
+        .layout td {
+            vertical-align: top;
+            padding: 15px;
+            border: 1px solid #000000;
+        }
+
+        .num {
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        /* 1 — шапка */
+        .block-1 {
+            height: 60px;
+            background-color: #ffcc00;
+        }
+
+        .logo {
+            float: left;
+            width: 180px;
+            height: 26px;
+            background-color: #ffffff;
+            border: 1px solid #000000;
+            margin-right: 20px;
+        }
+
+        .block-1 .num {
+            float: right;
+            margin-right: 30px;
+        }
+
+        /* ширина колонок задається через colgroup */
+        .col-2 {
+            width: 200px;
+        }
+
+        .col-3,
+        .col-5 {
+            width: 180px;
+        }
+
+        /* 2 — меню */
+        .block-2 {
+            background-color: #3366ff;
+            color: #ffffff;
+        }
+
+        /* 3 і 5 — бічні колонки */
+        .block-3,
+        .block-5 {
+            background-color: #ff5555;
+            color: #ffffff;
+        }
+
+        /* 4 — основний вміст */
+        .block-4 {
+            background-color: #ffffff;
+        }
+
+        .middle td {
+            height: 400px;
+        }
+
+        /* 6 — підвал */
+        .block-6 {
+            height: 50px;
+            background-color: #ffcc00;
+        }
+
+        .layout ul {
+            margin: 10px 0 0;
+            padding-left: 18px;
+        }
+
+        .layout p {
+            margin: 10px 0 0;
+        }
+    </style>
+</head>
+<body>
+
+    <table class="layout">
+        <colgroup>
+            <col class="col-2">
+            <col class="col-3">
+            <col class="col-4">
+            <col class="col-5">
+        </colgroup>
+        <tr>
+            <td colspan="4" class="block-1">
+                <div class="logo"></div>
+                <span class="num">1</span>
+                Шапка сайту
+            </td>
+        </tr>
+        <tr class="middle">
+            <td class="block-2">
+                <span class="num">2</span>
+                <ul>
+                    <li>Головна</li>
+                    <li>Каталог</li>
+                    <li>Ігри</li>
+                    <li>Контакти</li>
+                </ul>
+            </td>
+            <td class="block-3">
+                <span class="num">3</span>
+                <p>Новини: оновлення модів за тиждень.</p>
+            </td>
+            <td class="block-4">
+                <span class="num">4</span>
+                <p>Основний вміст сторінки. Ширина таблиці задана в пікселях (960px), тому при зміні розміру вікна макет не змінюється.</p>
+            </td>
+            <td class="block-5">
+                <span class="num">5</span>
+                <p>Популярне: найбільше завантажень.</p>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="4" class="block-6">
+                <span class="num">6</span>
+                &copy; 2026 Підвал сайту
+            </td>
+        </tr>
+    </table>
+
+</body>
+</html>

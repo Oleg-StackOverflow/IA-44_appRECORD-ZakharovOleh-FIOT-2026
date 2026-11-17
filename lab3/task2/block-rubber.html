@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Гумова блокова верстка — варіант 7</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px 0;
+            font-family: Verdana, Arial, sans-serif;
+            font-size: 14px;
+            background-color: #ffffff;
+        }
+
+        /* обгортка по центру сторінки */
+        .wrapper {
+            width: 80%;
+            margin: 0 auto;
+            padding: 0 5%;
+            background-color: #ffffff;
+            border: 1px solid #000000;
+            box-shadow: 8px 8px 0 #9a9a9a;
+        }
+
+        /* кольорові блоки всередині білої рамки */
+        .page {
+            border-left: 1px solid #000000;
+            border-right: 1px solid #000000;
+        }
+
+        .num {
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        /* 1 — шапка */
+        .header {
+            height: 60px;
+            padding: 15px;
+            background-color: #3366ff;
+            color: #ffffff;
+        }
+
+        /* контейнер для плаваючих колонок */
+        .columns {
+            overflow: hidden;
+            background-color: #ffffff;
+        }
+
+        /* 2 — ліва колонка */
+        .left {
+            float: left;
+            width: 20%;
+            height: 400px;
+            padding: 15px;
+            box-sizing: border-box;
+            background-color: #ffcc00;
+            border-right: 1px solid #000000;
+        }
+
+        /* 5 — права колонка */
+        .right {
+            float: right;
+            width: 20%;
+            height: 400px;
+            padding: 15px;
+            box-sizing: border-box;
+            background-color: #ffcc00;
+            border-left: 1px solid #000000;
+        }
+
+        /* 4 — основний вміст */
+        .content {
+            margin: 0 20%;
+            height: 400px;
+            padding: 15px;
+            box-sizing: border-box;
+        }
+
+        /* 3 — підвал */
+        .footer {
+            clear: both;
+            height: 50px;
+            padding: 15px;
+            background-color: #3366ff;
+            color: #ffffff;
+        }
+
+        .wrapper ul {
+            margin: 10px 0 0;
+            padding-left: 18px;
+        }
+
+        .wrapper p {
+            margin: 10px 0 0;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="wrapper">
+        <div class="page">
+            <div class="header">
+                <span class="num">1</span>
+                Шапка сайту
+            </div>
+
+            <div class="columns">
+                <div class="left">
+                    <span class="num">2</span>
+                    <ul>
+                        <li>Головна</li>
+                        <li>Каталог</li>
+                        <li>Ігри</li>
+                        <li>Контакти</li>
+                    </ul>
+                </div>
+
+                <div class="right">
+                    <span class="num">5</span>
+                    <p>Популярні моди тижня.</p>
+                </div>
+
+                <div class="content">
+                    <span class="num">4</span>
+                    <p>Основний вміст сторінки. Обгортка займає 80% ширини вікна, а колонки 2 і 5 — по 20% від обгортки. Макет змінює ширину разом з вікном браузера.</p>
+                </div>
+            </div>
+
+            <div class="footer">
+                <span class="num">3</span>
+                &copy; 2026 Підвал сайту
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

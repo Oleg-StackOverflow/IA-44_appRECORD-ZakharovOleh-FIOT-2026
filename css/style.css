@@ -289,8 +289,50 @@ figcaption {
     padding: 30px 20px;
 }
 
-/* ===== Адаптивність ===== */
-@media (max-width: 1000px) {
+/* ===== Скриншоти поруч (ЛР №3) ===== */
+.screens {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.screens figure {
+    flex: 1 1 260px;
+}
+
+.screens .screen-narrow {
+    flex: 0 1 260px;
+}
+
+.scheme {
+    max-width: 240px;
+}
+
+.open-link {
+    display: inline-block;
+    margin-bottom: 12px;
+    padding: 6px 14px;
+    border: 1px solid #1a56b8;
+    border-radius: 999px;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.open-link:hover {
+    background-color: #1a56b8;
+    color: #fff;
+}
+
+/* =========================================================
+   Адаптивність звіту
+   десктоп  — від 1001px
+   планшет  — 601px … 1000px
+   смартфон — до 600px
+   ========================================================= */
+
+/* ----- Планшет (оператор and) ----- */
+@media (min-width: 601px) and (max-width: 1000px) {
     .labs {
         grid-template-columns: repeat(5, 1fr);
     }
@@ -299,34 +341,122 @@ figcaption {
         grid-template-columns: 1fr;
     }
 
+    /* меню — у дві колонки над вмістом */
     .menu {
         position: static;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
     }
 
     .menu__item--sub {
-        margin-left: 24px;
+        margin-left: 0;
+        text-align: left;
     }
 }
 
+/* ----- Смартфон ----- */
 @media (max-width: 600px) {
     .header {
         flex-direction: column-reverse;
+        gap: 16px;
     }
 
     .header h1 {
-        font-size: 18px;
+        font-size: 17px;
     }
 
+    .header__photo {
+        width: 90px;
+        height: 112px;
+    }
+
+    /* кнопки лабораторних — одна стрічка з горизонтальною прокруткою */
     .labs {
-        grid-template-columns: repeat(3, 1fr);
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        padding-bottom: 6px;
+    }
+
+    .labs__item {
+        flex: 0 0 120px;
+        min-height: 48px;
+        scroll-snap-align: start;
+    }
+
+    .layout {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .menu {
+        position: static;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .menu__item,
+    .menu__item--sub {
+        margin-left: 0;
+        padding: 8px 14px;
+        font-size: 13px;
+        text-align: left;
     }
 
     .content {
-        padding: 20px;
+        padding: 20px 16px;
     }
 
-    .theory-table td:first-child {
+    .block h2 {
+        font-size: 22px;
+    }
+
+    pre {
+        font-size: 12px;
+        padding: 14px;
+    }
+
+    .theory-table td:first-child,
+    .links-table td:nth-child(2) {
         white-space: normal;
+    }
+}
+
+/* ----- Смартфон або планшет у горизонтальній орієнтації (кома — «або») ----- */
+@media (max-height: 500px) and (orientation: landscape), (max-width: 1000px) and (orientation: landscape) {
+    .menu {
+        position: static;
+    }
+}
+
+/* ----- Друк: лише вміст звіту (оператор only) ----- */
+@media only print {
+    .labs,
+    .menu,
+    .footer {
+        display: none;
+    }
+
+    .layout {
+        display: block;
+    }
+
+    .content {
+        border: none;
+        padding: 0;
+    }
+
+    pre {
+        white-space: pre-wrap;
+    }
+}
+
+/* ----- Широкі екрани без миші: більші кнопки меню (оператор not) ----- */
+@media not all and (pointer: fine) {
+    .menu__item {
+        padding-top: 12px;
+        padding-bottom: 12px;
     }
 }
 
